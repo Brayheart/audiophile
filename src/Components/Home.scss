@@ -1,0 +1,21 @@
+// test.scss
+
+// Define a variable
+$primary-color: #3490dc;
+
+// Define a mixin
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Use nesting
+.wrapper {
+  background: $primary-color;
+  
+  .content {
+    @include flex-center;
+    color: white;
+  }
+}
