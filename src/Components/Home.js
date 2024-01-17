@@ -1,11 +1,12 @@
 import React from 'react';
+import header from '../info/assets/home/mobile/image-header.jpg';
 
 const Home = () => {
   return (
-    <div>
-      <h1>Welcome to Our Ecommerce Store</h1>
-      {/* Add more content or components here */}
-    </div>
+    <section>
+      <img src={header} alt="" />
+
+    </section>
   );
 }
 
