@@ -121,3 +121,18 @@
     position: relative;
     top: -40px;
 }
+
+.orange-speaker-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+    border-radius: 8px;
+    background: #D87D4A;
+    align-items: center;
+}
+
+.orange-speaker {
+    width: 172.248px;
+    height: 207px;
+}

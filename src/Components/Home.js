@@ -3,6 +3,7 @@ import header from '../info/assets/home/mobile/image-header.jpg';
 import speakers from '../info/assets/home/mobile/image-speaker-zx9.png';
 import earphone from '../info/assets/home/mobile/earphone.png'
 import mk1headphone from '../info/assets/home/mobile/mk1headphone.png'
+import speakerBackround from '../info/assets/home/mobile/image-speaker-zx7.jpg'
 import './Home.scss';
 
 const Home = () => {
@@ -55,6 +56,41 @@ const Home = () => {
             <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12" fill="none">
               <path d="M1.32178 1L6.32178 6L1.32178 11" stroke="#D87D4A" stroke-width="2"/>
             </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-sm mx-auto p-4rounded-lg">
+        <div class="orange-speaker-container p-4 rounded-lg">
+          <img src={speakers} alt="ZX9 Speaker" class="w-full h-auto mb-4 orange-speaker" />
+          <h2 class="text-2xl font-bold text-white mb-2">ZX9 SPEAKER</h2>
+          <p class="text-white text-base mb-4">
+            Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.
+          </p>
+          <button class="bg-black text-white font-bold py-2 px-4 rounded hover:bg-opacity-90">
+            SEE PRODUCT
+          </button>
+        </div>
+      </div>
+
+      <div className="max-w-md mx-auto">
+        <div className="p-4">
+          <div className="relative rounded-lg overflow-hidden">
+            <div
+              className="bg-cover bg-center rounded-t-lg"
+              style={{
+                backgroundImage: `url(${speakerBackround})`,
+                paddingTop: '75%' // This sets the aspect ratio of the image container
+              }}
+            >
+              {/* The image will cover this div, which has rounded corners at the top */}
+            </div>
+            <div className="text-center p-6 absolute top-1/4">
+              <h2 className="text-2xl font-bold mb-4">ZX7 SPEAKER</h2>
+              <a href="#" className="border-2 border-black text-black px-8 py-2 inline-block hover:bg-black hover:text-white transition-colors">
+                SEE PRODUCT
+              </a>
+            </div>
           </div>
         </div>
       </div>
