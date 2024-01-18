@@ -4,6 +4,7 @@ import speakers from '../info/assets/home/mobile/image-speaker-zx9.png';
 import earphone from '../info/assets/home/mobile/earphone.png'
 import mk1headphone from '../info/assets/home/mobile/mk1headphone.png'
 import speakerBackround from '../info/assets/home/mobile/image-speaker-zx7.jpg'
+import earphoneBackground from '../info/assets/home/mobile/image-earphones-yx1.jpg';
 import './Home.scss';
 
 const Home = () => {
@@ -94,6 +95,25 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+    <div className="p-4">
+      <div
+        className="bg-cover bg-center rounded-lg"
+        style={{
+          backgroundImage: `url(${earphoneBackground})`,
+          paddingTop: '75%' // This sets the aspect ratio of the image container
+        }}
+      ></div>
+    </div>
+
+    <div className="flex justify-start items-center bg-gray-100 m-4 rounded p-10 h-72">
+      <div className="text-start">
+        <h2 className="text-2xl font-bold mb-4">YX1 EARPHONES</h2>
+        <button className="border-2 border-black px-8 py-2 inline-block font-bold hover:bg-black hover:text-white transition-colors">
+          SEE PRODUCT
+        </button>
+      </div>
+    </div>
 
     </div>
   );
