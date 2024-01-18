@@ -1,6 +1,8 @@
 import React from 'react';
 import header from '../info/assets/home/mobile/image-header.jpg';
 import speakers from '../info/assets/home/mobile/image-speaker-zx9.png';
+import earphone from '../info/assets/home/mobile/earphone.png'
+import mk1headphone from '../info/assets/home/mobile/mk1headphone.png'
 import './Home.scss';
 
 const Home = () => {
@@ -24,9 +26,7 @@ const Home = () => {
 
 
       {/* Products */}
-      {/* <div className="product-card">
-        <p>HEADPHONES</p>
-      </div> */}
+      <img src="" alt="" />
 
     </div>
   );
