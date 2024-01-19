@@ -12,7 +12,7 @@ module.exports = {
       height: {
         '100px' : '100px',
         '352px' : '352px',
-      }
+      },
     },
   },
   plugins: [],

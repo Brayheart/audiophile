@@ -6,6 +6,7 @@ import mk1headphone from '../info/assets/home/mobile/mk1headphone.png'
 import speakerBackround from '../info/assets/home/mobile/image-speaker-zx7.jpg'
 import earphoneBackground from '../info/assets/home/mobile/image-earphones-yx1.jpg';
 import './Home.scss';
+import ProductCards from './ProductCards';
 
 const Home = () => {
   return (
@@ -28,38 +29,7 @@ const Home = () => {
 
 
       {/* Products */}
-      <div className="product-box-container">
-        <div className="product-box">
-          <img className='mk1' src={mk1headphone} alt="" />
-          <div className="product-box-title mb-3">HEADPHONES</div>
-          <div className="shop-text-container">
-            <div className="shop-text">SHOP</div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12" fill="none">
-              <path d="M1.32178 1L6.32178 6L1.32178 11" stroke="#D87D4A" stroke-width="2"/>
-            </svg>
-          </div>
-        </div>
-        <div className="product-box">
-          <img className='mk1' src={mk1headphone} alt="" />
-          <div className="product-box-title mb-3">HEADPHONES</div>
-          <div className="shop-text-container">
-            <div className="shop-text">SHOP</div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12" fill="none">
-              <path d="M1.32178 1L6.32178 6L1.32178 11" stroke="#D87D4A" stroke-width="2"/>
-            </svg>
-          </div>
-        </div>
-        <div className="product-box">
-          <img className='mk1' src={mk1headphone} alt="" />
-          <div className="product-box-title mb-3">HEADPHONES</div>
-          <div className="shop-text-container">
-            <div className="shop-text">SHOP</div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12" fill="none">
-              <path d="M1.32178 1L6.32178 6L1.32178 11" stroke="#D87D4A" stroke-width="2"/>
-            </svg>
-          </div>
-        </div>
-      </div>
+      <ProductCards/>
 
       <div class="max-w-sm mx-auto p-4rounded-lg">
         <div class="orange-speaker-container p-4 rounded-lg">

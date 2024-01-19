@@ -1,5 +1,6 @@
 import React from 'react';
 import headphones from '../info/assets/home/mobile/mk1headphone.png'
+import ProductCards from './ProductCards'
 
 const Headphones = () => {
   return (
@@ -89,6 +90,7 @@ const Headphones = () => {
         </div>
       </div>
 
+    <ProductCards/>
       
     </div>
   );

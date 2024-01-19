@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import productData from '../info/data.json';
 
 const ProductDetail = () => {
   const { id } = useParams();
-  // Placeholder for fetching product details based on id
-  const product = { name: 'Product Name', description: 'Product Description' };
+  const [product, setProduct] = useState(null);
+
+  useEffect(() => {
+    // Find the product that matches the id in the URL
+    const productDetail = productData.find((p) => p.id === parseInt(id, 10));
+    setProduct(productDetail);
+  }, [id]);
+
+  if (!product) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div>
