@@ -1,12 +1,12 @@
 import React from 'react';
-import mk1headphone from '../info/assets/home/mobile/mk1headphone.png'
+// import '/assets/home/mobile/mk1headphone.png' from '../info/assets/home/mobile/mk1headphone.png'
 
 const ProductCards = () => {
 
   return (
     <div className="product-box-container">
         <div className="product-box">
-            <img className='mk1' src={mk1headphone} alt="" />
+            <img className='mk1' src={'/assets/home/mobile/mk1headphone.png'} alt="" />
             <div className="product-box-title mb-3">HEADPHONES</div>
             <div className="shop-text-container">
             <div className="shop-text">SHOP</div>
@@ -16,7 +16,7 @@ const ProductCards = () => {
             </div>
         </div>
         <div className="product-box">
-            <img className='mk1' src={mk1headphone} alt="" />
+            <img className='mk1' src={'/assets/home/mobile/mk1headphone.png'} alt="" />
             <div className="product-box-title mb-3">HEADPHONES</div>
             <div className="shop-text-container">
             <div className="shop-text">SHOP</div>
@@ -26,7 +26,7 @@ const ProductCards = () => {
             </div>
         </div>
         <div className="product-box">
-            <img className='mk1' src={mk1headphone} alt="" />
+            <img className='mk1' src={'/assets/home/mobile/mk1headphone.png'} alt="" />
             <div className="product-box-title mb-3">HEADPHONES</div>
             <div className="shop-text-container">
             <div className="shop-text">SHOP</div>

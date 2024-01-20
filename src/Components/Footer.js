@@ -1,5 +1,3 @@
-import imgBestGear from '../info/assets/shared/mobile/image-best-gear.jpg'
-
 const Footer = () => {
   return (
     <div>
@@ -8,7 +6,7 @@ const Footer = () => {
         <div
           className="bg-cover bg-center rounded-lg"
           style={{
-            backgroundImage: `url(${imgBestGear})`,
+            backgroundImage: `url(${'/assets/shared/mobile/image-best-gear.jpg'})`,
             paddingTop: '100%' // This sets the aspect ratio of the image container
           }}
         ></div>

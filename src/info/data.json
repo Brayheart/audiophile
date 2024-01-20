@@ -4,13 +4,13 @@
     "slug": "yx1-earphones",
     "name": "YX1 Wireless Earphones",
     "image": {
-      "mobile": "./assets/product-yx1-earphones/mobile/image-product.jpg",
+      "mobile": "../info/assets/product-yx1-earphones/mobile/image-product.jpg",
       "tablet": "./assets/product-yx1-earphones/tablet/image-product.jpg",
       "desktop": "./assets/product-yx1-earphones/desktop/image-product.jpg"
     },
     "category": "earphones",
     "categoryImage": {
-      "mobile": "./assets/product-yx1-earphones/mobile/image-category-page-preview.jpg",
+      "mobile": "../info/assets/product-yx1-earphones/mobile/image-category-page-preview.jpg",
       "tablet": "./assets/product-yx1-earphones/tablet/image-category-page-preview.jpg",
       "desktop": "./assets/product-yx1-earphones/desktop/image-category-page-preview.jpg"
     },

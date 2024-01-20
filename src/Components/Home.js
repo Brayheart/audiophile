@@ -1,10 +1,10 @@
 import React from 'react';
-import header from '../info/assets/home/mobile/image-header.jpg';
-import speakers from '../info/assets/home/mobile/image-speaker-zx9.png';
-import earphone from '../info/assets/home/mobile/earphone.png'
-import mk1headphone from '../info/assets/home/mobile/mk1headphone.png'
-import speakerBackround from '../info/assets/home/mobile/image-speaker-zx7.jpg'
-import earphoneBackground from '../info/assets/home/mobile/image-earphones-yx1.jpg';
+// import header from '../info/assets/home/mobile/image-header.jpg';
+// import speakers from '../info/assets/home/mobile/image-speaker-zx9.png';
+// import earphone from '../info/assets/home/mobile/earphone.png'
+// import mk1headphone from '../info/assets/home/mobile/mk1headphone.png'
+// import speakerBackround from '../info/assets/home/mobile/image-speaker-zx7.jpg'
+// import earphoneBackground from '../info/assets/home/mobile/image-earphones-yx1.jpg';
 import './Home.scss';
 import ProductCards from './ProductCards';
 
@@ -14,7 +14,7 @@ const Home = () => {
       {/* header */}
       <div class="relative text-center text-white">
         {/* Product Image */}
-        <img src={header} alt="XX99 Mark II Headphones" class="w-full h-auto" />
+        <img src={'/assets/home/mobile/image-header.jpg'} alt="XX99 Mark II Headphones" class="w-full h-auto" />
 
         {/* Product Info */}
         <div class="product-header absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
@@ -33,7 +33,7 @@ const Home = () => {
 
       <div class="max-w-sm mx-auto p-4rounded-lg">
         <div class="orange-speaker-container p-4 rounded-lg">
-          <img src={speakers} alt="ZX9 Speaker" class="w-full h-auto mb-4 orange-speaker" />
+          <img src={'assets/home/mobile/image-speaker-zx9.png'} alt="ZX9 Speaker" class="w-full h-auto mb-4 orange-speaker" />
           <h2 class="text-2xl font-bold text-white mb-2">ZX9 SPEAKER</h2>
           <p class="text-white text-base mb-4">
             Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.
@@ -50,7 +50,7 @@ const Home = () => {
             <div
               className="bg-cover bg-center rounded-t-lg"
               style={{
-                backgroundImage: `url(${speakerBackround})`,
+                backgroundImage: `url(${'/assets/home/mobile/image-speaker-zx7.jpg'})`,
                 paddingTop: '75%' // This sets the aspect ratio of the image container
               }}
             >
@@ -70,7 +70,7 @@ const Home = () => {
       <div
         className="bg-cover bg-center rounded-lg"
         style={{
-          backgroundImage: `url(${earphoneBackground})`,
+          backgroundImage: `url(${'assets/home/mobile/image-earphones-yx1.jpg'})`,
           paddingTop: '75%' // This sets the aspect ratio of the image container
         }}
       ></div>

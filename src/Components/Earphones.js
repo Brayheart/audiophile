@@ -1,5 +1,5 @@
 import React from 'react';
-import headphones from '../info/assets/home/mobile/mk1headphone.png';
+// import headphones from '/assets/home/mobile/mk1headphone.png';
 import ProductCards from './ProductCards';
 
 const Earphones = () => {
@@ -10,7 +10,7 @@ const Earphones = () => {
       </div>
 
       <div className="relative h-352px bg-custom-lightgray rounded-lg m-5 flex flex-col justify-center items-center">
-        <img src={headphones} className='w-6/12 absolute top-7' alt="" />
+        <img src={'/assets/home/mobile/mk1headphone.png'} className='w-6/12 absolute top-7' alt="" />
         <svg className='absolute bottom-2' xmlns="http://www.w3.org/2000/svg" width="253" height="123" viewBox="0 0 253 123" fill="none">
           <g opacity="0.152113" filter="url(#filter0_f_0_2116)">
           <ellipse cx="126.5" cy="61.5" rx="82.5" ry="17.5" fill="black"/>
