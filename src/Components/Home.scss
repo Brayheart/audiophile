@@ -1,133 +1,133 @@
 .product-header {
-    display: flex;
-    gap: 30px;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 60px;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
 }
 
 .new-product {
-    color: #FFF;
-    text-align: center;
-    font-family: Manrope;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 10px;
-    text-transform: uppercase;
-    opacity: 0.4964;
+  color: #fff;
+  text-align: center;
+  font-family: Manrope;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  opacity: 0.4964;
 }
 
 .product-title {
-    color: #FFF;
-    text-align: center;
-    font-family: Manrope;
-    font-size: 36px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 40px; /* 111.111% */
-    letter-spacing: 1.286px;
-    text-transform: uppercase;
-    width: 328px;
+  color: #fff;
+  text-align: center;
+  font-family: Manrope;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px; /* 111.111% */
+  letter-spacing: 1.286px;
+  text-transform: uppercase;
+  width: 328px;
 }
 
 .product-description {
-    color: #FFF;
-    text-align: center;
-    font-family: Manrope;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 25px; /* 166.667% */
-    opacity: 0.75;
-    width: 328px;
+  color: #fff;
+  text-align: center;
+  font-family: Manrope;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 25px; /* 166.667% */
+  opacity: 0.75;
+  width: 328px;
 }
 
 .see-product-btn {
-    width: 160px;
-    height: 48px;
-    flex-shrink: 0;
-    background: #D87D4A;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 160px;
+  height: 48px;
+  flex-shrink: 0;
+  background: #d87d4a;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .product-info {
-    position: absolute;
-    width: -webkit-fill-available;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
+  position: absolute;
+  width: -webkit-fill-available;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
 }
 
 .product-box {
-    display: flex;
-    flex-direction: column;
-    height: 165px;
-    flex-shrink: 0;
-    border-radius: 8px;
-    align-items: center;
-    background: #F1F1F1;
+  display: flex;
+  flex-direction: column;
+  height: 165px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  align-items: center;
+  background: #f1f1f1;
 }
 
 .product-box-title {
-    color: #000;
-    text-align: center;
-    font-family: Manrope;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 1.071px;
-    text-transform: uppercase;
+  color: #000;
+  text-align: center;
+  font-family: Manrope;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.071px;
+  text-transform: uppercase;
 }
 
 .product-box-container {
-    margin: 60px 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 80px;
+  margin: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
 }
 
 .shop-text-container {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    gap: 13.322px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 13.322px;
 }
 
 .shop-text {
-    opacity: 0.5;
-    color: #000;
-    font-family: Manrope;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+  opacity: 0.5;
+  color: #000;
+  font-family: Manrope;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .orange-speaker-container {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-content: center;
-    border-radius: 8px;
-    height: 600px;
-    background: #D87D4A;
-    align-items: center;
-    padding: 40px;
-    gap: 30px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-content: center;
+  border-radius: 8px;
+  height: 600px;
+  background: #d87d4a;
+  align-items: center;
+  padding: 40px;
+  gap: 30px;
 }
 
 .orange-speaker {
-    width: 172.248px;
-    height: 207px;
+  width: 172.248px;
+  height: 207px;
 }
