@@ -25,9 +25,10 @@ function App() {
         <Route exact path="/earphones" element={<Earphones/>} />
 
         {/* Routes for individual products */}
-        <Route path="/headphones/:id" element={<ProductDetail/>} />
-        <Route path="/speakers/:id" element={<ProductDetail/>} />
-        <Route path="/earphones/:id" element={<ProductDetail/>} />
+        <Route path="/headphones/:slug" element={<ProductDetail element="headphones" />} />
+        <Route path="/speakers/:slug" element={<ProductDetail element="speakers" />} />
+        <Route path="/earphones/:slug" element={<ProductDetail element="earphones" />} />
+
 
         {/* Checkout Route */}
         <Route path="/checkout" element={Checkout} />
