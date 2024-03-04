@@ -1,5 +1,5 @@
-import { MenuIcon, ShoppingCartIcon } from '@heroicons/react/outline'; // Ensure you have @heroicons/react installed
-import './Header.scss'
+import { MenuIcon, ShoppingCartIcon } from "@heroicons/react/outline"; // Ensure you have @heroicons/react installed
+import "./Header.scss";
 
 const Header = () => {
   return (
