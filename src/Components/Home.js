@@ -70,12 +70,12 @@ const Home = () => {
             </div>
             <div className="text-center p-6 absolute top-1/4">
               <h2 className="text-2xl font-bold mb-4">ZX7 SPEAKER</h2>
-              <a
-                href="#"
+              <Link
+                to="/speakers"
                 className="border-2 border-black text-black px-8 py-2 inline-block hover:bg-black hover:text-white transition-colors"
               >
-                SEE PRODUCT
-              </a>
+                See Product
+              </Link>
             </div>
           </div>
         </div>
