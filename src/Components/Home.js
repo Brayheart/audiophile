@@ -94,9 +94,12 @@ const Home = () => {
       <div className="flex justify-start items-center bg-gray-100 m-4 rounded p-10 h-72">
         <div className="text-start">
           <h2 className="text-2xl font-bold mb-4">YX1 EARPHONES</h2>
-          <button className="border-2 border-black px-8 py-2 inline-block font-bold hover:bg-black hover:text-white transition-colors">
+          <Link
+            to="/earphones"
+            className="border-2 border-black text-black px-8 py-2 inline-block hover:bg-black hover:text-white transition-colors"
+          >
             SEE PRODUCT
-          </button>
+          </Link>
         </div>
       </div>
     </div>
