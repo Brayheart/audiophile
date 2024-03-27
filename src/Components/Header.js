@@ -49,6 +49,14 @@ const Header = ({ cart, setCart }) => {
     return cart.reduce((total, item) => total + item.quantity * item.price, 0);
   };
 
+  const getTotalQuantity = () => {
+    return cart.reduce((total, product) => {
+      return total + product.quantity;
+    }, 0);
+  };
+
+  const total = getTotalQuantity();
+
   return (
     <>
       <header
@@ -94,8 +102,8 @@ const Header = ({ cart, setCart }) => {
               }}
               className="h-6 w-6 hover:text-orange-400 hover:cursor-pointer"
             />
-            <span className="absolute bg-orange-500 rounded-full px-[6.4px] top-[-10px] right-[-3px] text-[12px]">
-              1
+            <span className="absolute bg-orange-500 rounded-full px-[6.4px] top-[-10px] right-[-5px] text-[12px]">
+              {total ? total : ""}
             </span>
           </div>
         </div>
@@ -190,7 +198,13 @@ const Header = ({ cart, setCart }) => {
             >
               <div className="flex justify-between items-center">
                 <h2 className="font-bold text-xl">Cart ( {cart.length} )</h2>
-                <p className="cursor-pointer" onClick={() => setCart([])}>
+                <p
+                  className="cursor-pointer"
+                  onClick={() => {
+                    setCart([]);
+                    setIsCartVisible(false);
+                  }}
+                >
                   Remove All
                 </p>
               </div>
