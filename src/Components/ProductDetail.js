@@ -1,52 +1,54 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import productData from "../info/data.json";
+import { useParams, useLocation } from "react-router-dom";
+// ... other imports (e.g., ImageGallery, QuantitySelector, etc.)
 
-const ProductDetail = ({ element }) => {
+const ProductDetail = () => {
   const { slug } = useParams();
-  const [product, setProduct] = useState(null);
+  const { state } = useLocation();
+  const product = state?.product;
 
-  console.log("Slug from URL:", slug);
-  console.log("props", element);
-
-  useEffect(() => {
-    // Find the product that matches the slug and category
-    const productDetail = productData.find(
-      (p) => p.slug === slug && p.category === element
-    );
-    // Set the found product to the state
-    setProduct(productDetail);
-  }, [slug, element]);
-
-  // console.log(products)
   if (!product) {
-    return <div>Loading...</div>;
+    return <div>Product not found</div>;
   }
 
+  const {
+    name,
+    image,
+    category,
+    new: isNew,
+    price,
+    description,
+    features,
+    includes,
+    gallery,
+    others,
+  } = product;
+
+  console.log(product);
+
   return (
-    <div>
-      <div className="relative h-352px bg-custom-lightgray rounded-lg m-5 flex flex-col justify-center items-center">
-        {console.log(product)}
-        <img
-          src={product.image.mobile}
-          className="w-12/12 absolute top-7"
-          alt=""
-        />
-      </div>
-      <div className="flex justify-center mt-10 mb-20">
-        <div className="flex flex-col gap-[24px] text-center w-[327px] items-center">
-          <div className="text-custom-orange text-[14px] tracking-[10px]">
-            NEW PRODUCT
-          </div>
-          <div className="text-black text-[28px] font-bold">{product.name}</div>
-          <div className="font-[15px] leading-[25px] opacity-[0.5]">
-            The new XX99 Mark II headphones is the pinnacle of pristine audio.
-            It redefines your premium headphone experience by reproducing the
-            balanced depth and precision of studio-quality sound.
-          </div>
-          <button className="bg-custom-orange text-white w-[160px] h-[48px]">
-            SEE PRODUCT
-          </button>
+    <div className="container mx-auto px-5 py-16 md:px-0 md:py-24">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
+        <img src={image.mobile} alt="" />
+        <h1 className="text-3xl font-bold mb-4">{name}</h1>
+        <p className="text-gray-600 mb-8">{description}</p>
+        <p className="text-2xl font-bold mb-6">${price}</p>
+        <button className="bg-orange-500 text-white font-bold py-3 px-8 rounded-lg mt-6">
+          ADD TO CART
+        </button>
+        <div className="mt-12">
+          <h2 className="text-xl font-bold uppercase mb-4">FEATURES</h2>
+          <p className="text-gray-600">{features}</p>
+        </div>
+        <div className="mt-12">
+          <h2 className="text-xl font-bold uppercase mb-4">IN THE BOX</h2>
+          <ul>
+            {includes.map((item) => (
+              <li key={item.item} className="text-gray-600 mb-2">
+                {item.quantity}x {item.item}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>

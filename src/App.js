@@ -1,34 +1,55 @@
-import './App.css';
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 // Import your page components here
-import Home from './Components/Home';
-import Headphones from './Components/Headphones';
-import Speakers from './Components/Speakers';
-import Earphones from './Components/Earphones';
-import ProductDetail from './Components/ProductDetail';
-import Checkout from './Components/Checkout';
-import Footer from './Components/Footer'
-import Header from './Components/Header'
+import Home from "./Components/Home";
+import Headphones from "./Components/Headphones";
+import Speakers from "./Components/Speakers";
+import Earphones from "./Components/Earphones";
+import ProductDetail from "./Components/ProductDetail";
+import Checkout from "./Components/Checkout";
+import Footer from "./Components/Footer";
+import Header from "./Components/Header";
+import productData from "./info/data.json";
 
 function App() {
   return (
     <Router>
-      <Header/>
+      <Header />
       <Routes>
-        <Route exact path="/" element={<Home/>} />
+        <Route exact path="/" element={<Home />} />
 
         {/* Routes for product categories */}
-        <Route exact path="/headphones" element={<Headphones/>}/>
-        <Route exact path="/speakers" element={<Speakers/>} />
-        <Route exact path="/earphones" element={<Earphones/>} />
+        <Route
+          exact
+          path="/headphones"
+          element={<Headphones products={productData} />}
+        />
+        <Route
+          exact
+          path="/speakers"
+          element={<Speakers products={productData} />}
+        />
+        <Route
+          exact
+          path="/earphones"
+          element={<Earphones products={productData} />}
+        />
 
         {/* Routes for individual products */}
-        <Route path="/headphones/:slug" element={<ProductDetail element="headphones" />} />
-        <Route path="/speakers/:slug" element={<ProductDetail element="speakers" />} />
-        <Route path="/earphones/:slug" element={<ProductDetail element="earphones" />} />
-
+        <Route
+          path="/headphones/:slug"
+          element={<ProductDetail element="headphones" />}
+        />
+        <Route
+          path="/speakers/:slug"
+          element={<ProductDetail element="speakers" />}
+        />
+        <Route
+          path="/earphones/:slug"
+          element={<ProductDetail element="earphones" />}
+        />
 
         {/* Checkout Route */}
         <Route path="/checkout" element={Checkout} />
@@ -36,7 +57,7 @@ function App() {
         {/* Add a route for a 404 page or redirect to home */}
         <Route render={() => <div>404: Page Not Found</div>} />
       </Routes>
-      <Footer/>
+      <Footer />
     </Router>
   );
 }
