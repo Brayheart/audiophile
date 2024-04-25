@@ -15,6 +15,10 @@ const Header = ({ cart, setCart }) => {
     );
   };
 
+  const removeItem = (itemName) => {
+    setCart((prevCart) => prevCart.filter((item) => item.name !== itemName));
+  };
+
   const incrementQuantity = (itemName, quantity) => {
     updateQuantity(itemName, quantity + 1);
   };
@@ -52,6 +56,7 @@ const Header = ({ cart, setCart }) => {
               <CartItem
                 item={item}
                 // key={item.id} // Make sure each item has a unique key
+                removeItem={removeItem}
                 quantity={item.quantity} // Pass quantity as prop
                 onIncrement={() => incrementQuantity(item.name, item.quantity)}
                 onDecrement={() =>

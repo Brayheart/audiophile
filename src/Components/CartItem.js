@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { TrashIcon } from "@heroicons/react/outline";
 
-const CartItem = ({ item, quantity, onIncrement, onDecrement }) => {
+const CartItem = ({ item, quantity, onIncrement, onDecrement, removeItem }) => {
   return (
     <div>
       <div>
@@ -25,6 +26,8 @@ const CartItem = ({ item, quantity, onIncrement, onDecrement }) => {
       >
         +
       </button>
+
+      <TrashIcon onClick={() => removeItem(item.name)} className="w-1/12" />
     </div>
   );
 };
