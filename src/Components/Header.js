@@ -6,6 +6,7 @@ import CartItem from "./CartItem";
 
 const Header = ({ cart, setCart }) => {
   const [isCartVisible, setIsCartVisible] = useState(false);
+  const [isMenuVisible, setIsMenuVisible] = useState(false);
 
   const updateQuantity = (itemName, newQuantity) => {
     setCart((prevCart) =>
@@ -34,19 +35,28 @@ const Header = ({ cart, setCart }) => {
   return (
     <>
       <header className="header bg-black text-white flex justify-between items-center p-4">
-        {/* Hamburger Menu Icon */}
-        <MenuIcon className="h-6 w-6 md:hidden" />
-
-        {/* Logo */}
+        <MenuIcon
+          onClick={() => {
+            setIsMenuVisible(!isMenuVisible);
+            setIsCartVisible(false);
+          }}
+          className="h-6 w-6 md:hidden"
+        />
         <Link className="text-xl font-bold" to="/">
           audiophile
         </Link>
-
-        {/* Shopping Cart Icon */}
-        <button onClick={() => setIsCartVisible(!isCartVisible)}>
-          <ShoppingCartIcon className="h-6 w-6" />
-        </button>
+        <ShoppingCartIcon
+          onClick={() => {
+            setIsCartVisible(!isCartVisible);
+            setIsMenuVisible(false);
+          }}
+          className="h-6 w-6"
+        />
       </header>
+
+      {isMenuVisible && (
+        <div className="bg-white shadow-lg rounded-lg p-6 w-80">Menu</div>
+      )}
 
       {isCartVisible && (
         <div class="bg-white shadow-lg rounded-lg p-6 w-80">
@@ -56,7 +66,6 @@ const Header = ({ cart, setCart }) => {
               <CartItem
                 item={item}
                 // key={item.id} // Make sure each item has a unique key
-                removeItem={removeItem}
                 quantity={item.quantity} // Pass quantity as prop
                 onIncrement={() => incrementQuantity(item.name, item.quantity)}
                 onDecrement={() =>
