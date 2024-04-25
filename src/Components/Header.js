@@ -3,6 +3,8 @@ import "./Header.scss";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import CartItem from "./CartItem";
+import ProductCards from "./ProductCards";
+import Checkout from "./Checkout";
 
 const Header = ({ cart, setCart }) => {
   const [isCartVisible, setIsCartVisible] = useState(false);
@@ -54,19 +56,17 @@ const Header = ({ cart, setCart }) => {
         />
       </header>
 
-      {isMenuVisible && (
-        <div className="bg-white shadow-lg rounded-lg p-6 w-80">Menu</div>
-      )}
+      {isMenuVisible && <ProductCards setIsMenuVisible={setIsMenuVisible} />}
 
       {isCartVisible && (
         <div class="bg-white shadow-lg rounded-lg p-6 w-80">
           {cart.map((item) => {
-            console.log(item);
             return (
               <CartItem
                 item={item}
                 // key={item.id} // Make sure each item has a unique key
                 quantity={item.quantity} // Pass quantity as prop
+                removeItem={removeItem}
                 onIncrement={() => incrementQuantity(item.name, item.quantity)}
                 onDecrement={() =>
                   item.quantity > 1
@@ -77,8 +77,11 @@ const Header = ({ cart, setCart }) => {
             );
           })}
           <div>Total Price: ${calculateTotalPrice()}</div>
-          <button class="bg-orange-500 text-white w-full py-3 rounded hover:bg-orange-600 mt-4">
-            CHECKOUT
+          <button
+            onClick={() => setIsCartVisible(false)}
+            class="bg-orange-500 text-white w-full py-3 rounded hover:bg-orange-600 mt-4"
+          >
+            <Link to="/checkout">CHECKOUT</Link>
           </button>
         </div>
       )}
