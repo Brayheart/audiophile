@@ -1,11 +1,5 @@
 import React from "react";
-// import header from '../info/assets/home/mobile/image-header.jpg';
-// import speakers from '../info/assets/home/mobile/image-speaker-zx9.png';
-// import earphone from '../info/assets/home/mobile/earphone.png'
-// import mk1headphone from '../info/assets/home/mobile/mk1headphone.png'
-// import speakerBackround from '../info/assets/home/mobile/image-speaker-zx7.jpg'
-// import earphoneBackground from '../info/assets/home/mobile/image-earphones-yx1.jpg';
-import "./Home.scss";
+// import "./Home.scss";
 import ProductCards from "./ProductCards";
 import { Link } from "react-router-dom";
 

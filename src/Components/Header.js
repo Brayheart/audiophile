@@ -1,10 +1,9 @@
-import { MenuIcon, ShoppingCartIcon } from "@heroicons/react/outline"; // Ensure you have @heroicons/react installed
-import "./Header.scss";
+import { MenuIcon, ShoppingCartIcon } from "@heroicons/react/outline";
+// import "./Header.scss";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import CartItem from "./CartItem";
 import ProductCards from "./ProductCards";
-import Checkout from "./Checkout";
 
 const Header = ({ cart, setCart }) => {
   const [isCartVisible, setIsCartVisible] = useState(false);
@@ -65,7 +64,7 @@ const Header = ({ cart, setCart }) => {
               <CartItem
                 item={item}
                 // key={item.id} // Make sure each item has a unique key
-                quantity={item.quantity} // Pass quantity as prop
+                quantity={item.quantity}
                 removeItem={removeItem}
                 onIncrement={() => incrementQuantity(item.name, item.quantity)}
                 onDecrement={() =>
