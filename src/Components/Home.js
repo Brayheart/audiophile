@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div>
       {/* header */}
-      <div class="relative text-center text-white">
+      <div class="relative text-center text-bold text-white">
         {/* Product Image */}
         <img
           src={"/assets/home/mobile/image-header.jpg"}

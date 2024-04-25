@@ -35,24 +35,43 @@ const Header = ({ cart, setCart }) => {
 
   return (
     <>
-      <header className="header bg-black text-white flex justify-between items-center p-4">
-        <MenuIcon
-          onClick={() => {
-            setIsMenuVisible(!isMenuVisible);
-            setIsCartVisible(false);
-          }}
-          className="h-6 w-6 md:hidden"
-        />
-        <Link className="text-xl font-bold" to="/">
-          audiophile
-        </Link>
-        <ShoppingCartIcon
-          onClick={() => {
-            setIsCartVisible(!isCartVisible);
-            setIsMenuVisible(false);
-          }}
-          className="h-6 w-6"
-        />
+      <header className="lg:h-24 lg:px-20 header bg-black text-white  p-6 h-20 fixed top-0 w-full z-10">
+        <div className="flex justify-between items-center h-full">
+          <MenuIcon
+            onClick={() => {
+              setIsMenuVisible(!isMenuVisible);
+              setIsCartVisible(false);
+            }}
+            className="h-6 w-6 lg:hidden"
+          />
+          <Link
+            className="text-2xl font-bold lg:flex-grow-0 md:flex-grow md:align-center md:text-start md:ml-12 lg:ml-0"
+            to="/"
+          >
+            audiophile
+          </Link>
+          <ul className="flex gap-5">
+            <Link to="/" className="hover:text-orange-400">
+              HOME
+            </Link>
+            <Link to="/headphones" className="hover:text-orange-400">
+              HEADPHONES
+            </Link>
+            <Link to="/speakers" className="hover:text-orange-400">
+              SPEAKERS
+            </Link>
+            <Link to="/earphones" className="hover:text-orange-400">
+              EARPHONES
+            </Link>
+          </ul>
+          <ShoppingCartIcon
+            onClick={() => {
+              setIsCartVisible(!isCartVisible);
+              setIsMenuVisible(false);
+            }}
+            className="h-6 w-6 hover:text-orange-400 hover:cursor-pointer"
+          />
+        </div>
       </header>
 
       {isMenuVisible && <ProductCards setIsMenuVisible={setIsMenuVisible} />}
