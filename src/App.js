@@ -1,6 +1,6 @@
 import "./App.css";
-import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 
 // Import your page components here
 import Home from "./Components/Home";
@@ -14,9 +14,30 @@ import Header from "./Components/Header";
 import productData from "./info/data.json";
 
 function App() {
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (name, quantity, price) => {
+    setCart((prevCart) => {
+      // Check if the product (by name) already exists in the cart
+      const existingItemIndex = prevCart.findIndex(
+        (item) => item.name === name
+      );
+
+      if (existingItemIndex !== -1) {
+        // Update quantity of existing item
+        const newCart = [...prevCart];
+        newCart[existingItemIndex].quantity += quantity;
+        return newCart;
+      } else {
+        // Add new item to the cart with name and quantity
+        return [...prevCart, { name, quantity, price }];
+      }
+    });
+  };
+
   return (
     <Router>
-      <Header />
+      <Header cart={cart} setCart={setCart} />
       <Routes>
         <Route exact path="/" element={<Home />} />
 
@@ -39,16 +60,8 @@ function App() {
 
         {/* Routes for individual products */}
         <Route
-          path="/headphones/:slug"
-          element={<ProductDetail element="headphones" />}
-        />
-        <Route
-          path="/speakers/:slug"
-          element={<ProductDetail element="speakers" />}
-        />
-        <Route
-          path="/earphones/:slug"
-          element={<ProductDetail element="earphones" />}
+          path="/:category/:slug"
+          element={<ProductDetail addToCart={addToCart} />}
         />
 
         {/* Checkout Route */}
