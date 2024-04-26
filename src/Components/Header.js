@@ -35,8 +35,8 @@ const Header = ({ cart, setCart }) => {
 
   return (
     <>
-      <header className="lg:px-36 header bg-black text-white transparent bg-opacity-0 h-20 fixed top-0 w-full z-10">
-        <div className="flex justify-between items-center h-full border-b border-gray-700 ">
+      <header className="lg:px-36 md:px-28 px-10 header bg-black text-white transparent bg-opacity-0 h-20 fixed top-0 w-full z-10">
+        <div className="flex justify-between items-center h-full md:border-b border-gray-700 ">
           <MenuIcon
             onClick={() => {
               setIsMenuVisible(!isMenuVisible);
@@ -45,12 +45,12 @@ const Header = ({ cart, setCart }) => {
             className="h-6 w-6 lg:hidden"
           />
           <Link
-            className="text-2xl font-bold lg:flex-grow-0 md:flex-grow md:align-center md:text-start md:ml-12 lg:ml-0"
+            className="md:text-2xl text-lg font-bold lg:flex-grow-0 md:flex-grow md:align-center md:text-start md:ml-12 lg:ml-0"
             to="/"
           >
             audiophile
           </Link>
-          <ul className="flex gap-5">
+          <ul className="gap-5 hidden lg:flex">
             <Link to="/" className="hover:text-orange-400">
               HOME
             </Link>
