@@ -24,7 +24,7 @@ const Home = () => {
         </picture>
 
         {/* Product Info */}
-        <div className="absolute top-[160px] flex justify-center w-full md:top-[180px] lg:top-[150px] lg:justify-start">
+        <div className="absolute top-[160px] flex justify-center w-full md:top-[180px] lg:top-[150px] xl:top-[300px] lg:justify-start">
           <div className="text-white p-6 w-full px-10 md:px-44 lg:px-36 lg:text-left lg:w-1/2">
             <div className="text-sm uppercase tracking-widest font-semibold mb-2 md:text-xl md:mb-8 lg:text-base">
               New Product
