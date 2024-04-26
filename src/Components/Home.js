@@ -1,34 +1,45 @@
 import React from "react";
-// import "./Home.scss";
+import "./Home.scss";
 import ProductCards from "./ProductCards";
 import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
     <div>
-      {/* header */}
-      <div class="relative text-center text-bold text-white">
-        {/* Product Image */}
-        <img
-          src={"/assets/home/mobile/image-header.jpg"}
-          alt="XX99 Mark II Headphones"
-          class="w-full h-auto"
-        />
+      <div class="relative text-center text-white">
+        <picture>
+          <source
+            media="(min-width: 1024px)"
+            srcSet={"/assets/home/desktop/image-hero.jpg"}
+          />
+          <source
+            media="(min-width: 768px)"
+            srcSet={"/assets/home/tablet/image-header.jpg"}
+          />
+          <img
+            src={"/assets/home/mobile/image-header.jpg"}
+            alt="XX99 Mark II Headphones"
+            className="w-full h-auto"
+          />
+        </picture>
 
         {/* Product Info */}
-        <div class="product-header absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <span class="new-product">New Product</span>
-          <h2 class="product-title">XX99 MARK II HEADPHONES</h2>
-          <p class="mb-6">
-            Experience natural, lifelike audio and exceptional build quality
-            made for the passionate music enthusiast.
-          </p>
-          <Link
-            to="/headphones/xx99-mark-two-headphones"
-            className="see-product-btn"
-          >
-            See Product
-          </Link>
+        <div className="absolute top-[160px] flex justify-center w-full md:top-[180px] lg:top-[150px] lg:justify-start">
+          <div className="text-white p-6 w-full px-10 md:px-44 lg:px-36 lg:text-left lg:w-1/2">
+            <div className="text-sm uppercase tracking-widest font-semibold mb-2 md:text-xl md:mb-8 lg:text-base">
+              New Product
+            </div>
+            <h1 className="text-3xl font-bold leading-tight mb-4 md:text-5xl md:mb-8 lg:text-4xl">
+              XX99 Mark II Headphones
+            </h1>
+            <p className="text-base mb-6 md:text-lg md:mb-8 lg:text-xl">
+              Experience natural, lifelike audio and exceptional build quality
+              made for the passionate music enthusiast.
+            </p>
+            <button className="bg-orange-500 text-white uppercase font-bold py-3 px-6 rounded-sm hover:bg-orange-600 transition-colors md:py-4 md:px-8 lg:px-6 lg:text-sm lg:py-3">
+              See Product
+            </button>
+          </div>
         </div>
       </div>
 

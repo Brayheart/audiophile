@@ -35,7 +35,7 @@ const Header = ({ cart, setCart }) => {
 
   return (
     <>
-      <header className="lg:px-36 md:px-28 px-10 header bg-black text-white transparent bg-opacity-0 h-20 fixed top-0 w-full z-10">
+      <header className="fixed top-0 w-full z-10 bg-black bg-opacity-0 text-white h-20 px-10 md:px-28 lg:px-36 header">
         <div className="flex justify-between items-center h-full md:border-b border-gray-700 ">
           <MenuIcon
             onClick={() => {
