@@ -24,8 +24,8 @@ const Home = () => {
         </picture>
 
         {/* Product Info */}
-        <div className="absolute top-[160px] flex justify-center w-full md:top-[180px] lg:top-[150px] xl:top-[300px] lg:justify-start">
-          <div className="text-white p-6 w-full px-10 md:px-44 lg:px-36 lg:text-left lg:w-1/2">
+        <div className="absolute top-[160px] flex justify-center w-full md:top-[180px] lg:top-[100px] xl:top-[250px] lg:justify-start">
+          <div className="text-white p-6 w-full px-10 md:px-44 lg:px-36 lg:pr-0 lg:text-left lg:w-1/2">
             <div className="text-sm uppercase tracking-widest font-semibold mb-2 md:text-xl md:mb-8 lg:text-base">
               New Product
             </div>
@@ -46,29 +46,32 @@ const Home = () => {
       {/* Products */}
       <ProductCards />
 
-      <div class="max-w-sm mx-auto p-4rounded-lg">
-        <div class="orange-speaker-container p-4 rounded-lg">
+      <div className="bg-orange-400 rounded mx-5 mt-20 lg:mx-36 flex flex-col items-center text-center text-white lg:flex-row lg:justify-center lg:text-left lg:justify-evenly">
+        <div className="w-[150px] md:w-[250px] lg:mb-[-83px] overflow-hidden">
           <img
             src={"assets/home/mobile/image-speaker-zx9.png"}
             alt="ZX9 Speaker"
-            class="w-full h-auto mb-4 orange-speaker"
+            className="w-full mb-[-22px] md:mb-[-50px] lg:mb-[-10px]"
           />
-          <h2 class="text-2xl font-bold text-white mb-2">ZX9 SPEAKER</h2>
-          <p class="text-white text-base mb-4">
+        </div>
+        <div className="mt-16">
+          <h2 className="font-bold text-4xl mb-10 md:text-6xl lg:text-4xl lg:mb-5">
+            <span className="block">ZX9</span>
+            <span className="block">SPEAKER</span>
+          </h2>
+
+          <p className="text-md px-5 mb-5 md:w-[400px] md:text-lg md:mb-10 lg:pl-0 lg:mb-5">
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </p>
-          <Link
-            to="/speakers/zx9-speaker"
-            className="bg-black text-white font-bold py-2 px-4 rounded hover:bg-opacity-90"
-          >
+          <button className="bg-black text-white uppercase font-bold py-3 px-6 rounded-sm mb-16 hover:bg-orange-600 transition-colors md:py-4 md:px-8 lg:px-6 lg:py-3 lg:text-sm">
             See Product
-          </Link>
+          </button>
         </div>
       </div>
 
       <div className="max-w-md mx-auto">
-        <div className="p-4">
+        <div className="p-5">
           <div className="relative rounded-lg overflow-hidden">
             <div
               className="bg-cover bg-center rounded-t-lg"
@@ -92,7 +95,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="p-4">
+      <div className="p-5">
         <div
           className="bg-cover bg-center rounded-lg"
           style={{
@@ -102,7 +105,7 @@ const Home = () => {
         ></div>
       </div>
 
-      <div className="flex justify-start items-center bg-gray-100 m-4 rounded p-10 h-72">
+      <div className="flex justify-start items-center bg-gray-100 m-5 rounded p-10 h-72">
         <div className="text-start">
           <h2 className="text-2xl font-bold mb-4">YX1 EARPHONES</h2>
           <Link

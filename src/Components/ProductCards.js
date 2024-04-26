@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ProductCards = ({ setIsMenuVisible }) => {
   return (
-    <div className="px-10 flex flex-col mt-20 md:flex-row md:justify-between lg:px-36">
+    <div className="px-5 flex flex-col mt-20 md:flex-row md:justify-between md:px-10 lg:px-36">
       {/* <Link to="/headphones" onClick={() => setIsMenuVisible(false)}> */}
       <div className="flex flex-col items-center px-10 py-5 bg-gray-100 rounded-lg mb-20 md:mb-0 w-full">
         <img
@@ -29,7 +29,7 @@ const ProductCards = ({ setIsMenuVisible }) => {
           </svg>
         </div>
       </div>
-      <div className="flex flex-col items-center px-10 py-5 bg-gray-100 rounded-lg mb-20 md:mb-0 w-full mx-5">
+      <div className="flex flex-col items-center px-10 py-5 bg-gray-100 rounded-lg mb-20 md:mb-0 w-full md:mx-5">
         <img
           className="w-[90px] mt-[-70px] mb-8"
           src={"/assets/home/mobile/image-speaker-zx9.png"}
