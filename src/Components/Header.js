@@ -35,8 +35,8 @@ const Header = ({ cart, setCart }) => {
 
   return (
     <>
-      <header className="lg:h-24 lg:px-20 header bg-black text-white  p-6 h-20 fixed top-0 w-full z-10">
-        <div className="flex justify-between items-center h-full">
+      <header className="lg:px-36 header bg-black text-white transparent bg-opacity-0 h-20 fixed top-0 w-full z-10">
+        <div className="flex justify-between items-center h-full border-b border-gray-700 ">
           <MenuIcon
             onClick={() => {
               setIsMenuVisible(!isMenuVisible);
