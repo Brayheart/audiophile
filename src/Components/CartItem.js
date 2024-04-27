@@ -15,22 +15,19 @@ const CartItem = ({ item, quantity, onIncrement, onDecrement, slug }) => {
           <p>{"$" + item.price}</p>
         </div>
       </div>
-      <div className="bg-gray-300">
+      <div className="bg-gray-300 rounded-md">
         <button
           onClick={onDecrement}
-          className="p-2 hover:bg-gray-100 focus:outline-none"
+          className="px-3 py-2 hover:bg-gray-100 focus:outline-none"
         >
           -
         </button>
-        <input
-          type="text"
-          className="w-12 text-center border-0 focus:ring-0 bg-gray-300"
-          value={quantity}
-          readOnly
-        />
+        <div className="w-12 text-center border-0 focus:ring-0 bg-gray-300">
+          {quantity}
+        </div>
         <button
           onClick={onIncrement}
-          className="p-2 hover:bg-gray-100 focus:outline-none"
+          className="px-3 py-2 hover:bg-gray-100 focus:outline-none"
         >
           +
         </button>
