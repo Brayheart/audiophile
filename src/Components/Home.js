@@ -24,7 +24,7 @@ const Home = () => {
         </picture>
 
         {/* Product Info */}
-        <div className="absolute top-[160px] flex justify-center w-full md:top-[180px] lg:top-[100px] xl:top-[250px] lg:justify-start">
+        <div className="absolute top-[160px] flex justify-center w-full md:top-[180px] lg:top-[140px] xl:top-[250px] lg:justify-start">
           <div className="text-white p-6 w-full px-10 md:px-44 lg:px-36 lg:pr-0 lg:text-left lg:w-1/2">
             <div className="text-sm uppercase tracking-widest font-semibold mb-2 md:text-xl md:mb-8 lg:text-base">
               New Product
@@ -70,50 +70,46 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="max-w-md mx-auto">
-        <div className="p-5">
-          <div className="relative rounded-lg overflow-hidden">
-            <div
-              className="bg-cover bg-center rounded-t-lg"
-              style={{
-                backgroundImage: `url(${"/assets/home/mobile/image-speaker-zx7.jpg"})`,
-                paddingTop: "75%", // This sets the aspect ratio of the image container
-              }}
-            >
-              {/* The image will cover this div, which has rounded corners at the top */}
-            </div>
-            <div className="text-center p-6 absolute top-1/4">
-              <h2 className="text-2xl font-bold mb-4">ZX7 SPEAKER</h2>
-              <Link
-                to="/speakers/zx9-speaker"
-                className="border-2 border-black text-black px-8 py-2 inline-block hover:bg-black hover:text-white transition-colors"
-              >
-                See Product
-              </Link>
-            </div>
-          </div>
+      <div className="relative mx-5 mt-10 ">
+        <picture>
+          <source
+            media="(min-width: 1024px)"
+            srcSet={"/assets/home/desktop/image-speaker-zx7.jpg"}
+          />
+          <source
+            media="(min-width: 768px)"
+            srcSet={"/assets/home/tablet/image-speaker-zx7.jpg"}
+          />
+          <img
+            src={"/assets/home/mobile/image-speaker-zx7.jpg"}
+            alt="XX99 Mark II Headphones"
+            className="w-full h-auto rounded-lg"
+          />
+        </picture>
+        <div className="absolute top-1/3 ms-5 h-full flex flex-col md:ml-14">
+          <p className="text-3xl font-bold mb-5">ZX7 SPEAKER</p>
+          <button className="border border-black px-8 py-3">SEE PRODUCT</button>
         </div>
       </div>
 
-      <div className="p-5">
-        <div
-          className="bg-cover bg-center rounded-lg"
-          style={{
-            backgroundImage: `url(${"assets/home/mobile/image-earphones-yx1.jpg"})`,
-            paddingTop: "75%", // This sets the aspect ratio of the image container
-          }}
-        ></div>
-      </div>
+      <div className="flex flex-col md:flex-row">
+        <div className="p-5 md:w-[50%]">
+          <img
+            className="rounded-lg w-full"
+            src={"assets/home/mobile/image-earphones-yx1.jpg"}
+          ></img>
+        </div>
 
-      <div className="flex justify-start items-center bg-gray-100 m-5 rounded p-10 h-72">
-        <div className="text-start">
-          <h2 className="text-2xl font-bold mb-4">YX1 EARPHONES</h2>
-          <Link
-            to="/earphones/yx1-earphones"
-            className="border-2 border-black text-black px-8 py-2 inline-block hover:bg-black hover:text-white transition-colors"
-          >
-            SEE PRODUCT
-          </Link>
+        <div className="flex justify-start items-center bg-gray-100 mx-5 rounded p-10 md:w-[50%] md:my-5 rounded-lg">
+          <div className="text-start">
+            <h2 className="text-2xl font-bold mb-4">YX1 EARPHONES</h2>
+            <Link
+              to="/earphones/yx1-earphones"
+              className="border-2 border-black text-black px-8 py-2 inline-block hover:bg-black hover:text-white transition-colors"
+            >
+              SEE PRODUCT
+            </Link>
+          </div>
         </div>
       </div>
     </div>
