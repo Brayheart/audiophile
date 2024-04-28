@@ -15,7 +15,7 @@ const CartItem = ({ item, quantity, onIncrement, onDecrement, slug }) => {
           <p>{"$" + item.price}</p>
         </div>
       </div>
-      <div className="bg-gray-300 rounded-md">
+      <div className="bg-gray-300 rounded-md flex items-center">
         <button
           onClick={onDecrement}
           className="px-3 py-2 hover:bg-gray-100 focus:outline-none"
