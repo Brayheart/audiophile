@@ -35,64 +35,54 @@ const Footer = () => {
         </div>
       </div>
 
-      <footer className="bg-white text-black text-center">
+      <footer className="bg-black text-white text-center">
         {/* Logo and Links */}
-        <div className="bg-black text-white">
-          <div className="py-6 border-t border-gray-600 border-opacity-50">
-            {/* Logo */}
-            <h3 className="text-xl font-bold mb-4">audiophile</h3>
+        <div className="py-6 border-t border-gray-600 border-opacity-50 lg:flex lg:flex-row lg:justify-between">
+          {/* Logo */}
+          <h3 className="text-xl font-bold mb-4 md:text-left md:px-10 lg:mb-0">
+            audiophile
+          </h3>
 
-            {/* Navigation Links */}
-            <nav className="flex flex-col space-y-4">
-              <a href="/" className="hover:text-gray-300 transition-colors">
-                Home
-              </a>
-              <a
-                href="/headphones"
-                className="hover:text-gray-300 transition-colors"
-              >
-                Headphones
-              </a>
-              <a
-                href="/speakers"
-                className="hover:text-gray-300 transition-colors"
-              >
-                Speakers
-              </a>
-              <a
-                href="/earphones"
-                className="hover:text-gray-300 transition-colors"
-              >
-                Earphones
-              </a>
-            </nav>
-          </div>
-
-          {/* Lower Description */}
-          <p className="text-gray-400 mt-6">
-            Audiophile is an all in one stop to fulfill your audio needs. We're
-            a small team of music lovers and sound specialists who are devoted
-            to helping you get the most out of personal audio. Come and visit
-            our demo facility - we're open 7 days a week.
-          </p>
+          {/* Navigation Links */}
+          <nav className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:items-center md:px-10 md:gap-[20px] md:mt-6 lg:mt-0">
+            <a href="/" className="hover:text-gray-300 transition-colors">
+              HOME
+            </a>
+            <a
+              href="/headphones"
+              className="hover:text-gray-300 transition-colors"
+            >
+              HEADPHONES
+            </a>
+            <a
+              href="/speakers"
+              className="hover:text-gray-300 transition-colors"
+            >
+              SPEAKERS
+            </a>
+            <a
+              href="/earphones"
+              className="hover:text-gray-300 transition-colors"
+            >
+              EARPHONES
+            </a>
+          </nav>
         </div>
+
+        {/* Lower Description */}
+        <p className="text-gray-400 mt-6 px-10 md:text-left md:mt-0">
+          Audiophile is an all in one stop to fulfill your audio needs. We're a
+          small team of music lovers and sound specialists who are devoted to
+          helping you get the most out of personal audio. Come and visit our
+          demo facility - we're open 7 days a week.
+        </p>
 
         {/* Social Links and Copyright */}
-        <div className="flex items-center justify-between pt-6 border-t border-gray-600 border-opacity-50">
-          <div className="flex space-x-4">
-            {/* Social Icons would be here, you can use SVGs or an icon library like @heroicons/react */}
-            <a href="#" aria-label="Facebook">
-              {/* Facebook icon */}
-            </a>
-            <a href="#" aria-label="Twitter">
-              {/* Twitter icon */}
-            </a>
-            <a href="#" aria-label="Instagram">
-              {/* Instagram icon */}
-            </a>
-          </div>
-          <p className="text-gray-400">Copyright 2021. All Rights Reserved</p>
-        </div>
+        <p className="text-gray-400 mt-6 px-10 md:text-left">
+          Copyright 2021. All Rights Reserved
+        </p>
+
+        <ul></ul>
       </footer>
     </div>
   );
