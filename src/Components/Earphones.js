@@ -8,7 +8,7 @@ const Earphones = ({ products }) => {
     (product) => product.category === "earphones"
   );
   return (
-    <div>
+    <div className="pt-[80px]">
       <div className="bg-black h-100px flex items-center justify-center">
         <div className="text-white text-center text-[28px]">EARPHONES</div>
       </div>

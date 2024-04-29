@@ -1,6 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import React, { useState, useEffect } from "react";
+import ScrollToTop from "./Components/ScrollToTop";
 
 // Import your page components here
 import Home from "./Components/Home";
@@ -38,6 +39,7 @@ function App() {
   return (
     <Router>
       <Header cart={cart} setCart={setCart} />
+      <ScrollToTop />
       <Routes>
         <Route exact path="/" element={<Home />} />
 

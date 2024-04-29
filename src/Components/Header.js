@@ -1,13 +1,30 @@
 import { MenuIcon, ShoppingCartIcon } from "@heroicons/react/outline";
-// import "./Header.scss";
+import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CartItem from "./CartItem";
 import ProductCards from "./ProductCards";
 
 const Header = ({ cart, setCart }) => {
   const [isCartVisible, setIsCartVisible] = useState(false);
   const [isMenuVisible, setIsMenuVisible] = useState(false);
+
+  const [hasScrolled, setHasScrolled] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Set the state to true if the page has scrolled down
+      setHasScrolled(window.pageYOffset > 0);
+    };
+
+    // Add the scroll event listener when the component mounts
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener when the component unmounts
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const updateQuantity = (itemName, newQuantity) => {
     setCart((prevCart) =>
@@ -35,7 +52,13 @@ const Header = ({ cart, setCart }) => {
 
   return (
     <>
-      <header className="fixed top-0 w-full z-10 bg-black bg-opacity-0 text-white h-20 px-5 md:px-10 md:px-28 lg:px-36 header">
+      <header
+        className={`fixed top-0 w-full z-10 text-white h-20 px-5 md:px-10 md:px-28 lg:px-36 header ${
+          !isHomePage || (isHomePage && hasScrolled)
+            ? "bg-black"
+            : "bg-opacity-0"
+        }`}
+      >
         <div className="flex justify-between items-center h-full md:border-b border-gray-700 ">
           <MenuIcon
             onClick={() => {
