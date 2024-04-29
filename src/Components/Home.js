@@ -70,7 +70,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="relative mx-5 mt-10 ">
+      <div className="relative mx-5 mt-10 lg:mx-36">
         <picture>
           <source
             media="(min-width: 1024px)"
@@ -92,15 +92,15 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row">
-        <div className="p-5 md:w-[50%]">
+      <div className="flex flex-col md:flex-row lg:mx-36">
+        <div className="p-5 md:w-[50%] md:pr-0 lg:px-0">
           <img
             className="rounded-lg w-full"
             src={"assets/home/mobile/image-earphones-yx1.jpg"}
           ></img>
         </div>
 
-        <div className="flex justify-start items-center bg-gray-100 mx-5 rounded p-10 md:w-[50%] md:my-5 rounded-lg">
+        <div className="flex justify-start items-center bg-gray-100 mx-5 rounded p-10 md:w-[50%] md:my-5 rounded-lg lg:mr-0">
           <div className="text-start">
             <h2 className="text-2xl font-bold mb-4">YX1 EARPHONES</h2>
             <Link
