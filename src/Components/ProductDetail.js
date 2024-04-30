@@ -80,24 +80,26 @@ const ProductDetail = ({ addToCart }) => {
           </div>
         </div>
 
-        <div className="mt-12">
-          <h2 className="text-xl font-bold uppercase mb-4">FEATURES</h2>
-          <p className="text-gray-600">{features}</p>
-        </div>
-        <div className="mt-12 md:flex md:justify-between">
-          <h2 className="text-xl font-bold uppercase mb-4">IN THE BOX</h2>
-          <ul className="md:w-6/12">
-            {includes.map((item) => (
-              <li key={item.item} className="text-gray-600 mb-2">
-                {item.quantity}x {item.item}
-              </li>
-            ))}
-          </ul>
+        <div className="lg:flex lg:justify-between">
+          <div className="mt-12 lg:w-6/12">
+            <h2 className="text-xl font-bold uppercase mb-4 ">FEATURES</h2>
+            <p className="text-gray-600">{features}</p>
+          </div>
+          <div className="mt-12 md:flex md:justify-between lg:flex-col lg:w-4/12 lg:justify-start">
+            <h2 className="text-xl font-bold uppercase mb-4">IN THE BOX</h2>
+            <ul className="md:w-6/12 lg:w-full">
+              {includes.map((item) => (
+                <li key={item.item} className="text-gray-600 mb-2">
+                  {item.quantity}x {item.item}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         <div className="md:flex md:mt-10">
-          <div className="md:flex md:flex-col md:justify-between">
-            <picture>
+          <div className="md:flex md:flex-col lg:h-full md:mr-5 lg:mr-5 lg:w-[72.5%]">
+            <picture className="">
               <source
                 media="(min-width: 1024px)"
                 srcSet={gallery.first.desktop}
@@ -109,10 +111,10 @@ const ProductDetail = ({ addToCart }) => {
               <img
                 src={gallery.first.mobile}
                 alt="XX99 Mark II Headphones"
-                className="w-full h-auto rounded-lg mb-5 mt-10 md:m-0"
+                className="w-full h-auto rounded-lg md:mb-5 lg:mb-5 lg:h-full"
               />
             </picture>
-            <picture>
+            <picture className="">
               <source
                 media="(min-width: 1024px)"
                 srcSet={gallery.second.desktop}
@@ -124,11 +126,11 @@ const ProductDetail = ({ addToCart }) => {
               <img
                 src={gallery.second.mobile}
                 alt="XX99 Mark II Headphones"
-                className="w-full h-auto rounded-lg mb-5 md:m-0"
+                className="w-full h-auto rounded-lg mb-5 md:m-0 lg:h-full"
               />
             </picture>
           </div>
-          <picture>
+          <picture className="w-full">
             <source
               media="(min-width: 1024px)"
               srcSet={gallery.third.desktop}
@@ -137,7 +139,7 @@ const ProductDetail = ({ addToCart }) => {
             <img
               src={gallery.third.mobile}
               alt="XX99 Mark II Headphones"
-              className="w-full h-auto rounded-lg md:ml-5"
+              className="w-full h-auto rounded-lg "
             />
           </picture>
         </div>
