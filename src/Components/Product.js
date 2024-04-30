@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 
 const Product = ({ product }) => {
   const { name, image, slug, new: isNew, price, description } = product;
+  console.log(slug);
 
   return (
-    <Link to={`/headphones/${slug}`} state={{ product }}>
+    <Link to={`${slug}`} state={{ product }}>
       <div className="bg-white rounded-lg shadow-md p-4">
         <img src={image.desktop} alt={name} className="rounded-lg mb-2" />{" "}
         {/* Use desktop image for now, adjust for responsiveness */}

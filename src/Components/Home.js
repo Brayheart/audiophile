@@ -2,7 +2,14 @@ import React from "react";
 import ProductCards from "./ProductCards";
 import { Link } from "react-router-dom";
 
-const Home = () => {
+const Home = ({ productData }) => {
+  const Mark2 = productData.find(
+    (product) => product.slug === "xx99-mark-two-headphones"
+  );
+  const ZX9 = productData.find((product) => product.slug === "zx9-speaker");
+  const ZX7 = productData.find((product) => product.slug === "zx7-speaker");
+  const YX1 = productData.find((product) => product.slug === "yx1-earphones");
+
   return (
     <div>
       <div class="relative text-center text-white">
@@ -35,9 +42,14 @@ const Home = () => {
               Experience natural, lifelike audio and exceptional build quality
               made for the passionate music enthusiast.
             </p>
-            <button className="bg-orange-500 text-white uppercase font-bold py-3 px-6 rounded-sm hover:bg-orange-600 transition-colors md:py-4 md:px-8 lg:px-6 lg:text-sm lg:py-3">
-              See Product
-            </button>
+            <Link
+              to="headphones/xx99-mark-two-headphones"
+              state={{ product: Mark2 }}
+            >
+              <button className="bg-orange-500 text-white uppercase font-bold py-3 px-6 rounded-sm hover:bg-orange-600 transition-colors md:py-4 md:px-8 lg:px-6 lg:text-sm lg:py-3">
+                See Product
+              </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -63,9 +75,11 @@ const Home = () => {
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </p>
-          <button className="bg-black text-white uppercase font-bold py-3 px-6 rounded-sm mb-16 hover:bg-orange-600 transition-colors md:py-4 md:px-8 lg:px-6 lg:py-3 lg:text-sm">
-            See Product
-          </button>
+          <Link to="headphones/zx9-speaker" state={{ product: ZX9 }}>
+            <button className="bg-black text-white uppercase font-bold py-3 px-6 rounded-sm mb-16 hover:bg-orange-600 transition-colors md:py-4 md:px-8 lg:px-6 lg:py-3 lg:text-sm">
+              See Product
+            </button>
+          </Link>
         </div>
       </div>
 
@@ -87,7 +101,11 @@ const Home = () => {
         </picture>
         <div className="absolute top-1/3 ms-5 h-full flex flex-col md:ml-14">
           <p className="text-3xl font-bold mb-5">ZX7 SPEAKER</p>
-          <button className="border border-black px-8 py-3">SEE PRODUCT</button>
+          <Link to="headphones/zx7-speaker" state={{ product: ZX7 }}>
+            <button className="border border-black px-8 py-3">
+              SEE PRODUCT
+            </button>
+          </Link>
         </div>
       </div>
 
@@ -103,7 +121,8 @@ const Home = () => {
           <div className="text-start">
             <h2 className="text-2xl font-bold mb-4">YX1 EARPHONES</h2>
             <Link
-              to="/earphones/yx1-earphones"
+              to="headphones/yx1-earphones"
+              state={{ product: YX1 }}
               className="border-2 border-black text-black px-8 py-2 inline-block hover:bg-black hover:text-white transition-colors"
             >
               SEE PRODUCT

@@ -41,7 +41,7 @@ function App() {
       <Header cart={cart} setCart={setCart} />
       <ScrollToTop />
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/" element={<Home productData={productData} />} />
 
         {/* Routes for product categories */}
         <Route
@@ -70,7 +70,7 @@ function App() {
         <Route exact path="/checkout" element={<Checkout cart={cart} />} />
 
         {/* Add a route for a 404 page or redirect to home */}
-        <Route render={() => <div>404: Page Not Found</div>} />
+        <Route path="*" element={<div>404: Page Not Found</div>} />
       </Routes>
       <Footer />
     </Router>

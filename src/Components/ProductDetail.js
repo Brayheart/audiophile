@@ -5,7 +5,9 @@ import { useParams, useLocation } from "react-router-dom";
 const ProductDetail = ({ addToCart }) => {
   const { slug } = useParams();
   const { state } = useLocation();
+  console.log(state);
   const product = state?.product;
+  console.log(product);
   const [quantity, setQuantity] = useState(1);
 
   if (!product) {
@@ -25,7 +27,7 @@ const ProductDetail = ({ addToCart }) => {
     others,
   } = product;
 
-  console.log(product);
+  console.log(product.image);
 
   return (
     <div className="container mx-auto px-5 py-16 md:px-0 md:py-24">
