@@ -28,9 +28,9 @@ const ProductDetail = ({ addToCart }) => {
   console.log(others);
 
   return (
-    <div className="container mx-auto px-5 py-16 md:px-0 md:py-2 mt-10">
+    <div className="container mx-auto px-5 py-16 md:px-0 md:py-2 mt-10 md:mt-32">
       <div className="">
-        <div className="flex flex-col md:w-full md:flex-row">
+        <div className="flex flex-col md:w-full md:flex-row md:items-center">
           <picture>
             <source media="(min-width: 1024px)" srcSet={image.desktop} />
             <source media="(min-width: 768px)" srcSet={image.tablet} />
@@ -40,7 +40,7 @@ const ProductDetail = ({ addToCart }) => {
               className="w-full h-auto mb-5 rounded-lg"
             />
           </picture>
-          <div className="flex-col md:w-full">
+          <div className="flex-col md:w-full px-10">
             <h1 className="text-3xl font-bold mb-4">{name}</h1>
             <p className="text-gray-600 mb-8">{description}</p>
             <p className="text-2xl font-bold mb-6">${price}</p>
@@ -84,9 +84,9 @@ const ProductDetail = ({ addToCart }) => {
           <h2 className="text-xl font-bold uppercase mb-4">FEATURES</h2>
           <p className="text-gray-600">{features}</p>
         </div>
-        <div className="mt-12">
+        <div className="mt-12 md:flex md:justify-between">
           <h2 className="text-xl font-bold uppercase mb-4">IN THE BOX</h2>
-          <ul>
+          <ul className="md:w-6/12">
             {includes.map((item) => (
               <li key={item.item} className="text-gray-600 mb-2">
                 {item.quantity}x {item.item}
@@ -95,8 +95,8 @@ const ProductDetail = ({ addToCart }) => {
           </ul>
         </div>
 
-        <div>
-          <div>
+        <div className="md:flex md:mt-10">
+          <div className="md:flex md:flex-col md:justify-between">
             <picture>
               <source
                 media="(min-width: 1024px)"
@@ -109,7 +109,7 @@ const ProductDetail = ({ addToCart }) => {
               <img
                 src={gallery.first.mobile}
                 alt="XX99 Mark II Headphones"
-                className="w-full h-auto rounded-lg mb-5 mt-10"
+                className="w-full h-auto rounded-lg mb-5 mt-10 md:m-0"
               />
             </picture>
             <picture>
@@ -124,7 +124,7 @@ const ProductDetail = ({ addToCart }) => {
               <img
                 src={gallery.second.mobile}
                 alt="XX99 Mark II Headphones"
-                className="w-full h-auto rounded-lg mb-5"
+                className="w-full h-auto rounded-lg mb-5 md:m-0"
               />
             </picture>
           </div>
@@ -137,7 +137,7 @@ const ProductDetail = ({ addToCart }) => {
             <img
               src={gallery.third.mobile}
               alt="XX99 Mark II Headphones"
-              className="w-full h-auto rounded-lg"
+              className="w-full h-auto rounded-lg md:ml-5"
             />
           </picture>
         </div>
@@ -145,23 +145,31 @@ const ProductDetail = ({ addToCart }) => {
         <h2 className="text-center text-3xl font-bold mt-20 mb-10">
           YOU MAY ALSO LIKE
         </h2>
-        {others.map((el) => {
-          return (
-            <div>
-              <picture>
-                <source media="(min-width: 1024px)" srcSet={el.image.desktop} />
-                <source media="(min-width: 768px)" srcSet={el.image.tablet} />
-                <img src={el.image.mobile} className="w-full h-auto" />
-              </picture>
-              <p className="text-center text-2xl font-bold my-5">{el.name}</p>
-              <button className="mx-auto block bg-orange-500 text-white uppercase font-bold py-3 px-6 rounded-sm hover:bg-orange-600 transition-colors md:py-4 md:px-8 lg:px-6 lg:text-sm lg:py-3 mb-10">
-                See Product
-              </button>
-            </div>
-          );
-        })}
+        <div className="md:flex md:flex-row md:gap-5">
+          {others.map((el) => {
+            return (
+              <div>
+                <picture>
+                  <source
+                    media="(min-width: 1024px)"
+                    srcSet={el.image.desktop}
+                  />
+                  <source media="(min-width: 768px)" srcSet={el.image.tablet} />
+                  <img
+                    src={el.image.mobile}
+                    className="w-full h-auto rounded-lg"
+                  />
+                </picture>
+                <p className="text-center text-2xl font-bold my-5">{el.name}</p>
+                <button className="mx-auto block bg-orange-500 text-white uppercase font-bold py-3 px-6 rounded-sm hover:bg-orange-600 transition-colors md:py-4 md:px-8 lg:px-6 lg:text-sm lg:py-3 mb-10">
+                  See Product
+                </button>
+              </div>
+            );
+          })}
+        </div>
 
-        <div className="flex flex-col mt-[150px] md:flex-row md:justify-between md:px-10 lg:px-36">
+        <div className="flex flex-col mt-[150px] md:flex-row md:justify-between">
           {/* <Link to="/headphones" onClick={() => setIsMenuVisible(false)}> */}
           <div className="flex flex-col items-center px-10 py-5 bg-gray-100 rounded-lg mb-20 md:mb-0 w-full">
             <img
