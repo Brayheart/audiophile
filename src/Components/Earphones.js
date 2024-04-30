@@ -1,5 +1,5 @@
 import React from "react";
-// import headphones from '../info/assets/home/mobile/mk1headphone.png';
+// import headphones from '../info/assets/home/mobile/mk1headphone.png'
 import ProductCards from "./ProductCards";
 import Product from "./Product";
 
@@ -13,11 +13,9 @@ const Earphones = ({ products }) => {
         <div className="text-white text-center text-[28px]">EARPHONES</div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-5">
-        {" "}
-        {/* Adjust grid columns for responsiveness */}
-        {headphoneProducts.map((product) => (
-          <Product key={product.id} product={product} />
+      <div className="flex flex-col">
+        {headphoneProducts.map((product, index) => (
+          <Product key={product.id} product={product} index={index} />
         ))}
       </div>
 
