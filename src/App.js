@@ -14,14 +14,28 @@ import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import productData from "./info/data.json";
 
+function cleanProductName(name) {
+  const substringsToRemove = ["headphones", "speaker", "wireless earphones"];
+
+  let cleanedName = name.toLowerCase();
+
+  substringsToRemove.forEach((substring) => {
+    cleanedName = cleanedName.replace(substring, "");
+  });
+
+  return cleanedName.toUpperCase().trim();
+}
+
 function App() {
   const [cart, setCart] = useState([]);
 
-  const addToCart = (name, quantity, price) => {
+  const addToCart = (name, quantity, price, slug) => {
     setCart((prevCart) => {
-      // Check if the product (by name) already exists in the cart
+      const cleanName = cleanProductName(name);
+
+      // Check if the product (by cleaned name) already exists in the cart
       const existingItemIndex = prevCart.findIndex(
-        (item) => item.name === name
+        (item) => cleanProductName(item.name) === cleanName
       );
 
       if (existingItemIndex !== -1) {
@@ -30,8 +44,8 @@ function App() {
         newCart[existingItemIndex].quantity += quantity;
         return newCart;
       } else {
-        // Add new item to the cart with name and quantity
-        return [...prevCart, { name, quantity, price }];
+        // Add new item to the cart with cleaned name and quantity
+        return [...prevCart, { name: cleanName, quantity, price, slug }];
       }
     });
   };

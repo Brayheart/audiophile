@@ -3,7 +3,6 @@ import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import CartItem from "./CartItem";
-import ProductCards from "./ProductCards";
 
 const Header = ({ cart, setCart }) => {
   const [isCartVisible, setIsCartVisible] = useState(false);
@@ -175,35 +174,56 @@ const Header = ({ cart, setCart }) => {
             </div>
           </div>
         )}
-      </header>
-
-      {isCartVisible && (
-        <div class="bg-white shadow-lg rounded-lg p-6 w-80">
-          {cart.map((item) => {
-            return (
-              <CartItem
-                item={item}
-                // key={item.id} // Make sure each item has a unique key
-                quantity={item.quantity}
-                removeItem={removeItem}
-                onIncrement={() => incrementQuantity(item.name, item.quantity)}
-                onDecrement={() =>
-                  item.quantity > 1
-                    ? decrementQuantity(item.name, item.quantity)
-                    : ""
-                }
-              />
-            );
-          })}
-          <div>Total Price: ${calculateTotalPrice()}</div>
-          <button
+        {isCartVisible && (
+          <div
             onClick={() => setIsCartVisible(false)}
-            class="bg-orange-500 text-white w-full py-3 rounded hover:bg-orange-600 mt-4"
+            className="fixed top-[60px] inset-x-0 bottom-0 bg-black bg-opacity-50 p-0 m-0 md:flex md:justify-end  md:px-36"
           >
-            <Link to="/checkout">CHECKOUT</Link>
-          </button>
-        </div>
-      )}
+            <div
+              onClick={(e) => e.stopPropagation()}
+              className="bg-white text-black shadow-lg rounded-lg m-5 p-5 mt-20 md:w-[400px] h-fit"
+            >
+              <div className="flex justify-between items-center">
+                <h2 className="font-bold text-xl">Cart ( {cart.length} )</h2>
+                <p className="cursor-pointer" onClick={() => setCart([])}>
+                  Remove All
+                </p>
+              </div>
+              {cart.map((item) => {
+                return (
+                  <div className="flex items-center">
+                    <CartItem
+                      slug={item.slug}
+                      item={item}
+                      // key={item.id} // Make sure each item has a unique key
+                      quantity={item.quantity}
+                      removeItem={removeItem}
+                      onIncrement={() =>
+                        incrementQuantity(item.name, item.quantity)
+                      }
+                      onDecrement={() =>
+                        item.quantity > 1
+                          ? decrementQuantity(item.name, item.quantity)
+                          : ""
+                      }
+                    />
+                  </div>
+                );
+              })}
+              <div className="my-5 flex justify-between">
+                <div>TOTAL</div>
+                <div className="font-bold">${calculateTotalPrice()}</div>
+              </div>
+              <button
+                onClick={() => setIsCartVisible(false)}
+                class="bg-orange-500 text-white w-full py-3 rounded hover:bg-orange-600"
+              >
+                <Link to="/checkout">CHECKOUT</Link>
+              </button>
+            </div>
+          </div>
+        )}
+      </header>
     </>
   );
 };

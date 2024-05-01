@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useParams, useLocation } from "react-router-dom";
-import ProductCards from "./ProductCards";
 
 const ProductDetail = ({ addToCart }) => {
   const { slug } = useParams();
@@ -25,7 +24,7 @@ const ProductDetail = ({ addToCart }) => {
     others,
   } = product;
 
-  console.log(others);
+  console.log(name);
 
   return (
     <div className="container mx-auto px-5 py-16 md:px-0 md:py-2 mt-10 md:mt-32">
@@ -69,7 +68,7 @@ const ProductDetail = ({ addToCart }) => {
 
               <button
                 onClick={() => {
-                  addToCart(name, quantity, price);
+                  addToCart(name, quantity, price, slug);
                   setQuantity(0);
                 }}
                 className="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600 focus:outline-none"
