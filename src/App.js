@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import ScrollToTop from "./Components/ScrollToTop";
 

@@ -23,7 +23,7 @@ const Home = ({ productData }) => {
             srcSet={"/assets/home/tablet/image-header.jpg"}
           />
           <img
-            src={"/assets/home/mobile/image-header.jpg"}
+            src={`${process.env.PUBLIC_URL}/assets/home/mobile/image-header.jpg`}
             alt="XX99 Mark II Headphones"
             className="w-full h-auto"
           />
