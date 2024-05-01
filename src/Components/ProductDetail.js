@@ -31,8 +31,11 @@ const ProductDetail = ({ addToCart }) => {
       <div className="">
         <div className="flex flex-col md:w-full md:flex-row md:items-center">
           <picture>
-            <source media="(min-width: 1024px)" srcSet={image.desktop} />
-            <source media="(min-width: 768px)" srcSet={image.tablet} />
+            <source
+              media="(min-width: 1024px)"
+              srcSet={image.desktop.slice(1)}
+            />
+            <source media="(min-width: 768px)" srcSet={image.tablet.slice(1)} />
             <img
               src={image.mobile}
               alt="XX99 Mark II Headphones"
@@ -101,14 +104,14 @@ const ProductDetail = ({ addToCart }) => {
             <picture className="">
               <source
                 media="(min-width: 1024px)"
-                srcSet={gallery.first.desktop}
+                srcSet={gallery.first.desktop.slice(1)}
               />
               <source
                 media="(min-width: 768px)"
-                srcSet={gallery.first.tablet}
+                srcSet={gallery.first.tablet.slice(1)}
               />
               <img
-                src={gallery.first.mobile}
+                src={gallery.first.mobile.slice(1)}
                 alt="XX99 Mark II Headphones"
                 className="w-full h-auto rounded-lg md:mb-5 lg:mb-5 lg:h-full"
               />
@@ -116,14 +119,14 @@ const ProductDetail = ({ addToCart }) => {
             <picture className="">
               <source
                 media="(min-width: 1024px)"
-                srcSet={gallery.second.desktop}
+                srcSet={gallery.second.desktop.slice(1)}
               />
               <source
                 media="(min-width: 768px)"
-                srcSet={gallery.second.tablet}
+                srcSet={gallery.second.tablet.slice(1)}
               />
               <img
-                src={gallery.second.mobile}
+                src={gallery.second.mobile.slice(1)}
                 alt="XX99 Mark II Headphones"
                 className="w-full h-auto rounded-lg mb-5 md:m-0 lg:h-full"
               />
@@ -132,11 +135,14 @@ const ProductDetail = ({ addToCart }) => {
           <picture className="w-full">
             <source
               media="(min-width: 1024px)"
-              srcSet={gallery.third.desktop}
+              srcSet={gallery.third.desktop.slice(1)}
             />
-            <source media="(min-width: 768px)" srcSet={gallery.third.tablet} />
+            <source
+              media="(min-width: 768px)"
+              srcSet={gallery.third.tablet.slice(1)}
+            />
             <img
-              src={gallery.third.mobile}
+              src={gallery.third.mobile.slice(1)}
               alt="XX99 Mark II Headphones"
               className="w-full h-auto rounded-lg "
             />
@@ -153,11 +159,14 @@ const ProductDetail = ({ addToCart }) => {
                 <picture>
                   <source
                     media="(min-width: 1024px)"
-                    srcSet={el.image.desktop}
+                    srcSet={el.image.desktop.slice(1)}
                   />
-                  <source media="(min-width: 768px)" srcSet={el.image.tablet} />
+                  <source
+                    media="(min-width: 768px)"
+                    srcSet={el.image.tablet.slice(1)}
+                  />
                   <img
-                    src={el.image.mobile}
+                    src={el.image.mobile.slice(1)}
                     className="w-full h-auto rounded-lg"
                   />
                 </picture>
