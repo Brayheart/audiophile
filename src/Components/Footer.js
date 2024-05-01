@@ -5,14 +5,14 @@ const Footer = () => {
         <picture className="lg:w-full">
           <source
             media="(min-width: 1024px)"
-            srcSet={"/assets/shared/desktop/image-best-gear.jpg"}
+            srcSet={"assets/shared/desktop/image-best-gear.jpg"}
           />
           <source
             media="(min-width: 768px)"
-            srcSet={"/assets/shared/tablet/image-best-gear.jpg"}
+            srcSet={"assets/shared/tablet/image-best-gear.jpg"}
           />
           <img
-            src={"/assets/shared/mobile/image-best-gear.jpg"}
+            src={"assets/shared/mobile/image-best-gear.jpg"}
             className="w-full h-auto rounded-lg mb-10 "
           />
         </picture>

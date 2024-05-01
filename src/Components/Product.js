@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const Product = ({ product, index }) => {
   const { name, image, slug, new: isNew, price, description } = product;
   const isReverse = index % 2 !== 0;
+
   return (
     <div>
       <div
@@ -14,7 +15,7 @@ const Product = ({ product, index }) => {
         <picture className="lg:w-full">
           <source
             media="(min-width: 1024px)"
-            srcSet={product.categoryImage.desktop}
+            srcSet={product.categoryImage.desktop.slice(1)}
           />
           <source
             media="(min-width: 768px)"
