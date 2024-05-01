@@ -16,16 +16,14 @@ const Home = ({ productData }) => {
         <picture>
           <source
             media="(min-width: 1024px)"
-            srcSet={`${
-              process.env.PUBLIC_URL ? process.env.PUBLIC_URL + "/" : "/"
-            }assets/home/desktop/image-hero.jpg`}
+            srcSet={"assets/home/desktop/image-hero.jpg"}
           />
           <source
             media="(min-width: 768px)"
-            srcSet={`/${process.env.PUBLIC_URL}/assets/home/tablet/image-header.jpg`}
+            srcSet={"assets/home/tablet/image-header.jpg"}
           />
           <img
-            src={`/${process.env.PUBLIC_URL}/assets/home/mobile/image-header.jpg`}
+            src={`assets/home/mobile/image-header.jpg`}
             alt="XX99 Mark II Headphones"
             className="w-full h-auto"
           />
@@ -89,14 +87,14 @@ const Home = ({ productData }) => {
         <picture>
           <source
             media="(min-width: 1024px)"
-            srcSet={"/assets/home/desktop/image-speaker-zx7.jpg"}
+            srcSet={"assets/home/desktop/image-speaker-zx7.jpg"}
           />
           <source
             media="(min-width: 768px)"
-            srcSet={"/assets/home/tablet/image-speaker-zx7.jpg"}
+            srcSet={"assets/home/tablet/image-speaker-zx7.jpg"}
           />
           <img
-            src={"/assets/home/mobile/image-speaker-zx7.jpg"}
+            src={"assets/home/mobile/image-speaker-zx7.jpg"}
             alt="XX99 Mark II Headphones"
             className="w-full h-auto rounded-lg"
           />
