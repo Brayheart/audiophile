@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Checkout = ({ cart }) => {
   const calculateTotalPrice = () => {
@@ -6,60 +7,57 @@ const Checkout = ({ cart }) => {
   };
 
   return (
-    <div className="max-w-md mx-auto my-10">
-      <form>
-        <div className="mb-6">
+    <div className="mt-[150px] w-full md:px-36">
+      <form className="flex flex-col lg:flex-row w-full">
+        <div className="mb-6 w-full">
           <h2 className="text-2xl font-semibold mb-2">CHECKOUT</h2>
 
-          <div className="mb-4">
-            <label
-              className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="name"
-            >
-              Name
-            </label>
-            <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="name"
-              type="text"
-              placeholder="Alexei Ward"
-            />
+          <div class="grid grid-cols-2 gap-6">
+            <div className="mb-4">
+              <label
+                className="block text-gray-700 text-sm font-bold mb-2"
+                htmlFor="name"
+              >
+                Name
+              </label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="name"
+                type="text"
+                placeholder="Alexei Ward"
+              />
+            </div>
+
+            <div className="mb-4">
+              <label
+                className="block text-gray-700 text-sm font-bold mb-2"
+                htmlFor="email"
+              >
+                Email Address
+              </label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="email"
+                type="email"
+                placeholder="alexei@mail.com"
+              />
+            </div>
+
+            <div className="mb-4">
+              <label
+                className="block text-gray-700 text-sm font-bold mb-2"
+                htmlFor="phone"
+              >
+                Phone Number
+              </label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="phone"
+                type="tel"
+                placeholder="+202-555-0136"
+              />
+            </div>
           </div>
-
-          {/* ... other billing details fields ... */}
-
-          <div className="mb-4">
-            <label
-              className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="email"
-            >
-              Email Address
-            </label>
-            <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="email"
-              type="email"
-              placeholder="alexei@mail.com"
-            />
-          </div>
-
-          {/* ... other fields ... */}
-
-          <div className="mb-4">
-            <label
-              className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="phone"
-            >
-              Phone Number
-            </label>
-            <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="phone"
-              type="tel"
-              placeholder="+202-555-0136"
-            />
-          </div>
-
           {/* ... shipping info fields ... */}
 
           <div className="mb-4">
@@ -78,55 +76,56 @@ const Checkout = ({ cart }) => {
           </div>
 
           {/* ... other fields ... */}
+          <div class="grid grid-cols-2 gap-6">
+            <div className="mb-4">
+              <label
+                className="block text-gray-700 text-sm font-bold mb-2"
+                htmlFor="zip"
+              >
+                ZIP Code
+              </label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="zip"
+                type="text"
+                placeholder="10001"
+              />
+            </div>
 
-          <div className="mb-4">
-            <label
-              className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="zip"
-            >
-              ZIP Code
-            </label>
-            <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="zip"
-              type="text"
-              placeholder="10001"
-            />
+            {/* ... other fields ... */}
+
+            <div className="mb-6">
+              <label
+                className="block text-gray-700 text-sm font-bold mb-2"
+                htmlFor="city"
+              >
+                City
+              </label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="city"
+                type="text"
+                placeholder="New York"
+              />
+            </div>
+
+            <div className="mb-6">
+              <label
+                className="block text-gray-700 text-sm font-bold mb-2"
+                htmlFor="country"
+              >
+                Country
+              </label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="country"
+                type="text"
+                placeholder="United States"
+              />
+            </div>
           </div>
-
-          {/* ... other fields ... */}
-
-          <div className="mb-6">
-            <label
-              className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="city"
-            >
-              City
-            </label>
-            <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="city"
-              type="text"
-              placeholder="New York"
-            />
-          </div>
-
-          <div className="mb-6">
-            <label
-              className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="country"
-            >
-              Country
-            </label>
-            <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="country"
-              type="text"
-              placeholder="United States"
-            />
-          </div>
-
           {/* Payment Details */}
+
           <fieldset className="mb-4">
             <legend className="block text-gray-700 text-sm font-bold mb-2">
               Payment Method
@@ -163,48 +162,78 @@ const Checkout = ({ cart }) => {
               </label>
             </div>
           </fieldset>
+          <div class="grid grid-cols-2 gap-6">
+            <div className="mb-4">
+              <label
+                className="block text-gray-700 text-sm font-bold mb-2"
+                htmlFor="e-money-number"
+              >
+                e-Money Number
+              </label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="e-money-number"
+                type="text"
+                placeholder="238521993"
+              />
+            </div>
 
-          <div className="mb-4">
-            <label
-              className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="e-money-number"
-            >
-              e-Money Number
-            </label>
-            <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="e-money-number"
-              type="text"
-              placeholder="238521993"
-            />
-          </div>
-
-          <div className="mb-6">
-            <label
-              className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="e-money-pin"
-            >
-              e-Money PIN
-            </label>
-            <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="e-money-pin"
-              type="password"
-              placeholder="****"
-            />
+            <div className="mb-6">
+              <label
+                className="block text-gray-700 text-sm font-bold mb-2"
+                htmlFor="e-money-pin"
+              >
+                e-Money PIN
+              </label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="e-money-pin"
+                type="password"
+                placeholder="****"
+              />
+            </div>
           </div>
         </div>
-        {cart.map((item) => {
-          console.log(item);
-          return (
-            <p>
-              {item.name}
-              {item.price}
-              {item.quantity}
-            </p>
-          );
-        })}
-        <div>Total Price: ${calculateTotalPrice()}</div>
+        <div className="lg:w-3/12 ml-10">
+          {cart.map((item) => {
+            console.log(item);
+            return (
+              <div className="flex w-full items-center justify-between mt-5">
+                <div className="flex items-center text-center">
+                  <img
+                    src={`/assets/cart/image-${item.slug}.jpg`}
+                    alt=""
+                    className="w-[90px] rounded-lg block"
+                  />
+                  <div className="ml-5">
+                    <h3 className="font-bold">{item.name}</h3>
+                    <p>{"$" + item.price}</p>
+                  </div>
+                </div>
+                <div className="">{"x" + item.quantity}</div>
+              </div>
+            );
+          })}
+          <div className="my-5 flex justify-between">
+            <div>TOTAL</div>
+            <div className="font-bold">${calculateTotalPrice()}</div>
+          </div>
+          <div className="my-5 flex justify-between">
+            <div>SHIPPING</div>
+            <div className="font-bold">$50</div>
+          </div>
+          <div className="my-5 flex justify-between">
+            <div>VAT ( included )</div>
+            <div className="font-bold">${calculateTotalPrice()}</div>
+          </div>
+          <div className="my-5 flex justify-between">
+            <div>GRAND TOTAL</div>
+            <div className="font-bold">${calculateTotalPrice() + 50}</div>
+          </div>
+          <button class="bg-orange-500 text-white w-full py-3 rounded hover:bg-orange-600 ">
+            <Link to="/checkout">Continue and Pay</Link>
+          </button>
+        </div>
       </form>
     </div>
   );
