@@ -19,10 +19,10 @@ const Product = ({ product, index }) => {
           />
           <source
             media="(min-width: 768px)"
-            srcSet={product.categoryImage.tablet}
+            srcSet={product.categoryImage.tablet.slice(1)}
           />
           <img
-            src={product.categoryImage.mobile}
+            src={product.categoryImage.mobile.slice(1)}
             className="mb-5 rounded-lg md:my-10"
           />
         </picture>
