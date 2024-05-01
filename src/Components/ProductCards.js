@@ -8,7 +8,7 @@ const ProductCards = ({ setIsMenuVisible }) => {
       <div className="flex flex-col items-center px-10 py-5 bg-gray-100 rounded-lg mb-20 md:mb-0 w-full">
         <img
           className="w-[90px] mt-[-70px] mb-8"
-          src={`assets/home/mobile/mk1headphone.png`}
+          src={`./assets/home/mobile/mk1headphone.png`}
           alt=""
         />
         <div className="font-bold mb-2">HEADPHONES</div>
