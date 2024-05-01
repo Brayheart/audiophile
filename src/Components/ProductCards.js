@@ -8,7 +8,7 @@ const ProductCards = ({ setIsMenuVisible }) => {
       <div className="flex flex-col items-center px-10 py-5 bg-gray-100 rounded-lg mb-20 md:mb-0 w-full">
         <img
           className="w-[90px] mt-[-70px] mb-8"
-          src={"/assets/home/mobile/mk1headphone.png"}
+          src={`${process.env.PUBLIC_URL}/assets/home/mobile/mk1headphone.png`}
           alt=""
         />
         <div className="font-bold mb-2">HEADPHONES</div>
@@ -34,7 +34,7 @@ const ProductCards = ({ setIsMenuVisible }) => {
       <div className="flex flex-col items-center px-10 py-5 bg-gray-100 rounded-lg mb-20 md:mb-0 w-full md:mx-5">
         <img
           className="w-[90px] mt-[-70px] mb-8"
-          src={"/assets/home/mobile/image-speaker-zx9.png"}
+          src={`${process.env.PUBLIC_URL}/assets/home/mobile/image-speaker-zx9.png`}
           alt=""
         />
         <div className="font-bold mb-2">SPEAKERS</div>
@@ -60,7 +60,7 @@ const ProductCards = ({ setIsMenuVisible }) => {
       <div className="flex flex-col items-center px-10 py-5 bg-gray-100 rounded-lg md:mb-0 w-full">
         <img
           className="w-[140px] mt-[-90px] mb-8"
-          src={"/assets/home/mobile/earphone.png"}
+          src={`${process.env.PUBLIC_URL}/assets/home/mobile/earphone.png`}
           alt=""
         />
         <div className="font-bold mb-2">EARPHONES</div>
