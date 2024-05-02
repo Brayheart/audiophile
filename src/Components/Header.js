@@ -234,14 +234,16 @@ const Header = ({ cart, setCart }) => {
                 <div>TOTAL</div>
                 <div className="font-bold">${calculateTotalPrice()}</div>
               </div>
-              <Link to="/checkout">
-                <button
-                  onClick={() => setIsCartVisible(false)}
-                  class="bg-orange-500 text-white w-full py-3 rounded hover:bg-orange-600"
-                >
-                  CHECKOUT
-                </button>
-              </Link>
+              {cart.length > 0 && (
+                <Link to="/checkout">
+                  <button
+                    onClick={() => setIsCartVisible(false)}
+                    class="bg-orange-500 text-white w-full py-3 rounded hover:bg-orange-600"
+                  >
+                    CHECKOUT
+                  </button>
+                </Link>
+              )}
             </div>
           </div>
         )}
