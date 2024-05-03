@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Checkout = ({ cart }) => {
+const Checkout = ({ cart, setCart }) => {
   const [modal, setIsModal] = useState(false);
 
   const calculateTotalPrice = () => {
@@ -235,8 +235,10 @@ const Checkout = ({ cart }) => {
                 <div className="font-bold">${calculateTotalPrice() + 50}</div>
               </div>
               <button
-                onClick={() => setIsModal(true)}
-                className="bg-orange-500 text-white w-full py-3 rounded hover:bg-orange-600 "
+                onClick={() => {
+                  setIsModal(true);
+                }}
+                className="bg-orange-500 text-white w-full py-3 rounded hover:bg-orange-600"
               >
                 Continue and Pay
               </button>
@@ -245,10 +247,12 @@ const Checkout = ({ cart }) => {
         </div>
       }
       {modal && (
-        <div className="fixed w-full h-full bg-[rgb(64,64,64,0.6)] inset-0 flex items-center justify-center">
+        <div className="fixed w-full h-full bg-[rgb(64,64,64,0.6)] inset-0 flex items-center justify-center z-10">
           <div className="flex flex-col p-5 bg-white rounded-lg">
-            <h2>THANK YOU FOR YOUR ORDER</h2>
-            <p>You will receive an email confirmation shortly</p>
+            <h2 className="text-xl font-bold">THANK YOU FOR YOUR ORDER</h2>
+            <p className="my-2">
+              You will receive an email confirmation shortly
+            </p>
             <div>
               {cart.map((item) => {
                 return (
@@ -275,6 +279,7 @@ const Checkout = ({ cart }) => {
             </div>
             <Link
               to="/"
+              onClick={() => setCart([])}
               className="bg-orange-500 text-white w-full py-3 rounded hover:bg-orange-600 text-center font-bold"
             >
               BACK TO HOME

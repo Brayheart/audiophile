@@ -81,7 +81,11 @@ function App() {
         />
 
         {/* Checkout Route */}
-        <Route exact path="/checkout" element={<Checkout cart={cart} />} />
+        <Route
+          exact
+          path="/checkout"
+          element={<Checkout cart={cart} setCart={setCart} />}
+        />
 
         {/* Add a route for a 404 page or redirect to home */}
         <Route path="*" element={<div>404: Page Not Found</div>} />
