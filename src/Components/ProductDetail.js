@@ -33,11 +33,14 @@ const ProductDetail = ({ addToCart }) => {
           <picture>
             <source
               media="(min-width: 1024px)"
-              srcSet={image.desktop.slice(1)}
+              srcSet={`${process.env.PUBLIC_URL}/` + image.desktop.slice(1)}
             />
-            <source media="(min-width: 768px)" srcSet={image.tablet.slice(1)} />
+            <source
+              media="(min-width: 768px)"
+              srcSet={`${process.env.PUBLIC_URL}/` + image.tablet.slice(1)}
+            />
             <img
-              src={image.mobile}
+              src={`${process.env.PUBLIC_URL}/` + image.mobile}
               alt="XX99 Mark II Headphones"
               className="w-full h-auto mb-5 rounded-lg"
             />
@@ -71,7 +74,7 @@ const ProductDetail = ({ addToCart }) => {
 
               <button
                 onClick={() => {
-                  addToCart(name, quantity, price);
+                  addToCart(name, quantity, price, slug);
                   setQuantity(0);
                 }}
                 className="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600 focus:outline-none"
@@ -104,14 +107,20 @@ const ProductDetail = ({ addToCart }) => {
             <picture className="">
               <source
                 media="(min-width: 1024px)"
-                srcSet={gallery.first.desktop.slice(1)}
+                srcSet={
+                  `${process.env.PUBLIC_URL}/` + gallery.first.desktop.slice(1)
+                }
               />
               <source
                 media="(min-width: 768px)"
-                srcSet={gallery.first.tablet.slice(1)}
+                srcSet={
+                  `${process.env.PUBLIC_URL}/` + gallery.first.tablet.slice(1)
+                }
               />
               <img
-                src={gallery.first.mobile.slice(1)}
+                src={
+                  `${process.env.PUBLIC_URL}/` + gallery.first.mobile.slice(1)
+                }
                 alt="XX99 Mark II Headphones"
                 className="w-full h-auto rounded-lg md:mb-5 lg:mb-5 lg:h-full"
               />
@@ -119,14 +128,20 @@ const ProductDetail = ({ addToCart }) => {
             <picture className="">
               <source
                 media="(min-width: 1024px)"
-                srcSet={gallery.second.desktop.slice(1)}
+                srcSet={
+                  `${process.env.PUBLIC_URL}/` + gallery.second.desktop.slice(1)
+                }
               />
               <source
                 media="(min-width: 768px)"
-                srcSet={gallery.second.tablet.slice(1)}
+                srcSet={
+                  `${process.env.PUBLIC_URL}/` + gallery.second.tablet.slice(1)
+                }
               />
               <img
-                src={gallery.second.mobile.slice(1)}
+                src={
+                  `${process.env.PUBLIC_URL}/` + gallery.second.mobile.slice(1)
+                }
                 alt="XX99 Mark II Headphones"
                 className="w-full h-auto rounded-lg mb-5 md:m-0 lg:h-full"
               />
@@ -135,14 +150,18 @@ const ProductDetail = ({ addToCart }) => {
           <picture className="w-full">
             <source
               media="(min-width: 1024px)"
-              srcSet={gallery.third.desktop.slice(1)}
+              srcSet={
+                `${process.env.PUBLIC_URL}/` + gallery.third.desktop.slice(1)
+              }
             />
             <source
               media="(min-width: 768px)"
-              srcSet={gallery.third.tablet.slice(1)}
+              srcSet={
+                `${process.env.PUBLIC_URL}/` + gallery.third.tablet.slice(1)
+              }
             />
             <img
-              src={gallery.third.mobile.slice(1)}
+              src={`${process.env.PUBLIC_URL}/` + gallery.third.mobile.slice(1)}
               alt="XX99 Mark II Headphones"
               className="w-full h-auto rounded-lg "
             />
@@ -159,14 +178,20 @@ const ProductDetail = ({ addToCart }) => {
                 <picture>
                   <source
                     media="(min-width: 1024px)"
-                    srcSet={el.image.desktop.slice(1)}
+                    srcSet={
+                      `${process.env.PUBLIC_URL}/` + el.image.desktop.slice(1)
+                    }
                   />
                   <source
                     media="(min-width: 768px)"
-                    srcSet={el.image.tablet.slice(1)}
+                    srcSet={
+                      `${process.env.PUBLIC_URL}/` + el.image.tablet.slice(1)
+                    }
                   />
                   <img
-                    src={el.image.mobile.slice(1)}
+                    src={
+                      `${process.env.PUBLIC_URL}/` + el.image.mobile.slice(1)
+                    }
                     className="w-full h-auto rounded-lg"
                   />
                 </picture>
@@ -184,7 +209,7 @@ const ProductDetail = ({ addToCart }) => {
           <div className="flex flex-col items-center px-10 py-5 bg-gray-100 rounded-lg mb-20 md:mb-0 w-full">
             <img
               className="w-[90px] mt-[-70px] mb-8"
-              src={"assets/home/mobile/mk1headphone.png"}
+              src={`${process.env.PUBLIC_URL}/assets/home/mobile/mk1headphone.png`}
               alt=""
             />
             <div className="font-bold mb-2">HEADPHONES</div>
@@ -208,7 +233,7 @@ const ProductDetail = ({ addToCart }) => {
           <div className="flex flex-col items-center px-10 py-5 bg-gray-100 rounded-lg mb-20 md:mb-0 w-full md:mx-5">
             <img
               className="w-[90px] mt-[-70px] mb-8"
-              src={"assets/home/mobile/image-speaker-zx9.png"}
+              src={`${process.env.PUBLIC_URL}/assets/home/mobile/image-speaker-zx9.png`}
               alt=""
             />
             <div className="font-bold mb-2">SPEAKERS</div>
@@ -232,7 +257,7 @@ const ProductDetail = ({ addToCart }) => {
           <div className="flex flex-col items-center px-10 py-5 bg-gray-100 rounded-lg md:mb-0 w-full">
             <img
               className="w-[140px] mt-[-90px] mb-8"
-              src={"assets/home/mobile/earphone.png"}
+              src={`${process.env.PUBLIC_URL}/assets/home/mobile/earphone.png`}
               alt=""
             />
             <div className="font-bold mb-2">EARPHONES</div>

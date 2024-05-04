@@ -201,7 +201,7 @@ const Checkout = ({ cart }) => {
               <div className="flex w-full items-center justify-between mt-5">
                 <div className="flex items-center text-center">
                   <img
-                    src={`/assets/cart/image-${item.slug}.jpg`}
+                    src={`${process.env.PUBLIC_URL}/assets/cart/image-${item.slug}.jpg`}
                     alt=""
                     className="w-[90px] rounded-lg block"
                   />

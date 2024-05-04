@@ -6,7 +6,7 @@ const CartItem = ({ item, quantity, onIncrement, onDecrement, slug }) => {
     <div className="flex w-full items-center justify-between mt-5">
       <div className="flex items-center">
         <img
-          src={`/assets/cart/image-${slug}.jpg`}
+          src={`${process.env.PUBLIC_URL}/assets/cart/image-${slug}.jpg`}
           alt=""
           className="w-[90px] rounded-lg block"
         />

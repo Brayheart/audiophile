@@ -15,14 +15,23 @@ const Product = ({ product, index }) => {
         <picture className="lg:w-full">
           <source
             media="(min-width: 1024px)"
-            srcSet={product.categoryImage.desktop.slice(1)}
+            srcSet={
+              `${process.env.PUBLIC_URL}/` +
+              product.categoryImage.desktop.slice(1)
+            }
           />
           <source
             media="(min-width: 768px)"
-            srcSet={product.categoryImage.tablet.slice(1)}
+            srcSet={
+              `${process.env.PUBLIC_URL}/` +
+              product.categoryImage.tablet.slice(1)
+            }
           />
           <img
-            src={product.categoryImage.mobile.slice(1)}
+            src={
+              `${process.env.PUBLIC_URL}/` +
+              product.categoryImage.mobile.slice(1)
+            }
             className="mb-5 rounded-lg md:my-10"
           />
         </picture>
