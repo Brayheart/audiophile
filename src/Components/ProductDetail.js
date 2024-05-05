@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import { useParams, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+import productData from "../info/data.json";
 
 const ProductDetail = ({ addToCart }) => {
   const { slug } = useParams();
   const { state } = useLocation();
-  const product = state?.product;
   const [quantity, setQuantity] = useState(1);
+  const product = state?.product;
 
   if (!product) {
-    return <div>Product not found</div>;
+    return <div className="mt-[80px]">Product not found</div>;
   }
 
   const {
@@ -24,7 +26,14 @@ const ProductDetail = ({ addToCart }) => {
     others,
   } = product;
 
-  console.log(others);
+  console.log(product);
+
+  function getCategoryFromSlug(slug) {
+    const parts = slug.split("-");
+    const possibleCategories = ["headphones", "speaker", "earphone"];
+    const category = parts.find((part) => possibleCategories.includes(part));
+    return category || "default-category";
+  }
 
   return (
     <div className="container mx-auto px-5 py-16 md:px-0 md:py-2 mt-10 md:mt-32">
@@ -45,7 +54,7 @@ const ProductDetail = ({ addToCart }) => {
               className="w-full h-auto mb-5 rounded-lg"
             />
           </picture>
-          <div className="flex-col md:w-full px-10">
+          <div className="flex-col md:w-full ">
             <h1 className="text-3xl font-bold mb-4">{name}</h1>
             <p className="text-gray-600 mb-8">{description}</p>
             <p className="text-2xl font-bold mb-6">${price}</p>
@@ -90,7 +99,7 @@ const ProductDetail = ({ addToCart }) => {
             <h2 className="text-xl font-bold uppercase mb-4 ">FEATURES</h2>
             <p className="text-gray-600">{features}</p>
           </div>
-          <div className="mt-12 md:flex md:justify-between lg:flex-col lg:w-4/12 lg:justify-start">
+          <div className="mt-12 md:flex md:justify-between lg:flex-col lg:w-4/12 lg:justify-start my-20">
             <h2 className="text-xl font-bold uppercase mb-4">IN THE BOX</h2>
             <ul className="md:w-6/12 lg:w-full">
               {includes.map((item) => (
@@ -122,7 +131,7 @@ const ProductDetail = ({ addToCart }) => {
                   `${process.env.PUBLIC_URL}/` + gallery.first.mobile.slice(1)
                 }
                 alt="XX99 Mark II Headphones"
-                className="w-full h-auto rounded-lg md:mb-5 lg:mb-5 lg:h-full"
+                className="w-full h-auto rounded-lg mb-5 lg:h-full"
               />
             </picture>
             <picture className="">
@@ -173,6 +182,9 @@ const ProductDetail = ({ addToCart }) => {
         </h2>
         <div className="md:flex md:flex-row md:gap-5">
           {others.map((el) => {
+            const category = getCategoryFromSlug(el.slug);
+            console.log(el);
+            console.log(`/${category}/${el.slug}`);
             return (
               <div>
                 <picture>
@@ -196,16 +208,17 @@ const ProductDetail = ({ addToCart }) => {
                   />
                 </picture>
                 <p className="text-center text-2xl font-bold my-5">{el.name}</p>
-                <button className="mx-auto block bg-orange-500 text-white uppercase font-bold py-3 px-6 rounded-sm hover:bg-orange-600 transition-colors md:py-4 md:px-8 lg:px-6 lg:text-sm lg:py-3 mb-10">
-                  See Product
-                </button>
+                <Link to={`/${category}/${el.slug}`}>
+                  <button className="mx-auto block bg-orange-500 text-white uppercase font-bold py-3 px-6 rounded-sm hover:bg-orange-600 transition-colors md:py-4 md:px-8 lg:px-6 lg:text-sm lg:py-3 mb-10">
+                    See Product
+                  </button>
+                </Link>
               </div>
             );
           })}
         </div>
 
         <div className="flex flex-col mt-[150px] md:flex-row md:justify-between">
-          {/* <Link to="/headphones" onClick={() => setIsMenuVisible(false)}> */}
           <div className="flex flex-col items-center px-10 py-5 bg-gray-100 rounded-lg mb-20 md:mb-0 w-full">
             <img
               className="w-[90px] mt-[-70px] mb-8"
@@ -213,22 +226,24 @@ const ProductDetail = ({ addToCart }) => {
               alt=""
             />
             <div className="font-bold mb-2">HEADPHONES</div>
-            <div className="flex items-center">
-              <div className="mr-2 text-gray-500">SHOP</div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="8"
-                height="12"
-                viewBox="0 0 8 12"
-                fill="none"
-              >
-                <path
-                  d="M1.32178 1L6.32178 6L1.32178 11"
-                  stroke="#D87D4A"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
+            <Link to="/headphones">
+              <div className="flex items-center">
+                <div className="mr-2 text-gray-500">SHOP</div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="8"
+                  height="12"
+                  viewBox="0 0 8 12"
+                  fill="none"
+                >
+                  <path
+                    d="M1.32178 1L6.32178 6L1.32178 11"
+                    stroke="#D87D4A"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </Link>
           </div>
           <div className="flex flex-col items-center px-10 py-5 bg-gray-100 rounded-lg mb-20 md:mb-0 w-full md:mx-5">
             <img
@@ -236,23 +251,25 @@ const ProductDetail = ({ addToCart }) => {
               src={`${process.env.PUBLIC_URL}/assets/home/mobile/image-speaker-zx9.png`}
               alt=""
             />
-            <div className="font-bold mb-2">SPEAKERS</div>
-            <div className="flex items-center">
-              <div className="mr-2 text-gray-500">SHOP</div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="8"
-                height="12"
-                viewBox="0 0 8 12"
-                fill="none"
-              >
-                <path
-                  d="M1.32178 1L6.32178 6L1.32178 11"
-                  stroke="#D87D4A"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
+            <Link to="/speakers">
+              <div className="font-bold mb-2">SPEAKERS</div>
+              <div className="flex items-center justify-center">
+                <div className="mr-2 text-gray-500">SHOP</div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="8"
+                  height="12"
+                  viewBox="0 0 8 12"
+                  fill="none"
+                >
+                  <path
+                    d="M1.32178 1L6.32178 6L1.32178 11"
+                    stroke="#D87D4A"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </Link>
           </div>
           <div className="flex flex-col items-center px-10 py-5 bg-gray-100 rounded-lg md:mb-0 w-full">
             <img
@@ -261,22 +278,24 @@ const ProductDetail = ({ addToCart }) => {
               alt=""
             />
             <div className="font-bold mb-2">EARPHONES</div>
-            <div className="flex items-center">
-              <div className="mr-2 text-gray-500">SHOP</div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="8"
-                height="12"
-                viewBox="0 0 8 12"
-                fill="none"
-              >
-                <path
-                  d="M1.32178 1L6.32178 6L1.32178 11"
-                  stroke="#D87D4A"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
+            <Link to="/earphones">
+              <div className="flex items-center">
+                <div className="mr-2 text-gray-500">SHOP</div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="8"
+                  height="12"
+                  viewBox="0 0 8 12"
+                  fill="none"
+                >
+                  <path
+                    d="M1.32178 1L6.32178 6L1.32178 11"
+                    stroke="#D87D4A"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </Link>
           </div>
         </div>
       </div>

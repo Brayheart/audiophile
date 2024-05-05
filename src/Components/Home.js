@@ -58,11 +58,11 @@ const Home = ({ productData }) => {
       <ProductCards />
 
       <div className="bg-orange-400 rounded mx-5 mt-20 lg:mx-36 flex flex-col items-center text-center text-white lg:flex-row lg:justify-center lg:text-left lg:justify-evenly">
-        <div className="w-[150px] md:w-[250px] lg:mb-[-83px] overflow-hidden">
+        <div className="w-[150px] mt-10">
           <img
             src={`${process.env.PUBLIC_URL}/assets/home/mobile/image-speaker-zx9.png`}
             alt="ZX9 Speaker"
-            className="w-full mb-[-22px] md:mb-[-50px] lg:mb-[-10px]"
+            className="w-full "
           />
         </div>
         <div className="mt-16">

@@ -7,13 +7,13 @@ const ProductCards = ({ setIsMenuVisible }) => {
       {/* <Link to="/headphones" onClick={() => setIsMenuVisible(false)}> */}
       <div className="flex flex-col items-center px-10 py-5 bg-gray-100 rounded-lg mb-20 md:mb-0 w-full">
         <img
-          className="w-[90px] mt-[-70px] mb-8"
+          className="w-[90px] mt-[-80px] mb-8"
           src={`${process.env.PUBLIC_URL}/assets/home/mobile/mk1headphone.png`}
           alt=""
         />
         <div className="font-bold mb-2">HEADPHONES</div>
         <Link to="/headphones">
-          <div className="flex items-center">
+          <div className="flex items-center mb-2">
             <div className="mr-2 text-gray-500">SHOP</div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +34,7 @@ const ProductCards = ({ setIsMenuVisible }) => {
       <div className="flex flex-col items-center px-10 py-5 bg-gray-100 rounded-lg mb-20 md:mb-0 w-full md:mx-5">
         <img
           className="w-[90px] mt-[-70px] mb-8"
-          src={`${process.env.PUBLIC_URL}/assets/home/mobile/mk1headphone.png`}
+          src={`${process.env.PUBLIC_URL}/assets/home/mobile/image-speaker-zx9.png`}
           alt=""
         />
         <div className="font-bold mb-2">SPEAKERS</div>

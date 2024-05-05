@@ -88,7 +88,7 @@ function App() {
         />
 
         {/* Add a route for a 404 page or redirect to home */}
-        <Route path="*" element={<div>404: Page Not Found</div>} />
+        {/* <Route path="*" element={<div>404: Page Not Found</div>} /> */}
       </Routes>
       <Footer />
     </Router>
