@@ -300,7 +300,7 @@ const Checkout = ({ cart, setCart }) => {
                   {console.log(isFormValid())}
                 </div>
                 <button
-                  onClick={() => {
+                  onClick={(e) => {
                     e.preventDefault();
                     setIsModal(true);
                   }}
