@@ -86,13 +86,18 @@ const Header = ({ cart, setCart }) => {
               EARPHONES
             </Link>
           </ul>
-          <ShoppingCartIcon
-            onClick={() => {
-              setIsCartVisible(!isCartVisible);
-              setIsMenuVisible(false);
-            }}
-            className="h-6 w-6 hover:text-orange-400 hover:cursor-pointer"
-          />
+          <div className="relative">
+            <ShoppingCartIcon
+              onClick={() => {
+                setIsCartVisible(!isCartVisible);
+                setIsMenuVisible(false);
+              }}
+              className="h-6 w-6 hover:text-orange-400 hover:cursor-pointer"
+            />
+            <span className="absolute bg-orange-500 rounded-full px-[6.4px] top-[-10px] right-[-3px] text-[12px]">
+              1
+            </span>
+          </div>
         </div>
         {isMenuVisible && (
           <div
