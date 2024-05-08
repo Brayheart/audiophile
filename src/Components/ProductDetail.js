@@ -28,12 +28,9 @@ const ProductDetail = ({ addToCart }) => {
 
   console.log(product);
 
-  function getCategoryFromSlug(slug) {
-    const parts = slug.split("-");
-    const possibleCategories = ["headphones", "speaker", "earphone"];
-    const category = parts.find((part) => possibleCategories.includes(part));
-    return category || "default-category";
-  }
+  const productDetail = (slug) => {
+    return productData.find((product) => product.slug === slug);
+  };
 
   return (
     <div className="container mx-auto px-5 py-16 md:px-0 md:py-2 mt-10 md:mt-32">
@@ -182,9 +179,7 @@ const ProductDetail = ({ addToCart }) => {
         </h2>
         <div className="md:flex md:flex-row md:gap-5">
           {others.map((el) => {
-            const category = getCategoryFromSlug(el.slug);
-            console.log(el);
-            console.log(`/${category}/${el.slug}`);
+            const productDetails = productDetail(el.slug);
             return (
               <div>
                 <picture>
@@ -208,7 +203,10 @@ const ProductDetail = ({ addToCart }) => {
                   />
                 </picture>
                 <p className="text-center text-2xl font-bold my-5">{el.name}</p>
-                <Link to={`/${category}/${el.slug}`}>
+                <Link
+                  to={`/${category}/${el.slug}`}
+                  state={{ product: productDetails }}
+                >
                   <button className="mx-auto block bg-orange-500 text-white uppercase font-bold py-3 px-6 rounded-sm hover:bg-orange-600 transition-colors md:py-4 md:px-8 lg:px-6 lg:text-sm lg:py-3 mb-10">
                     See Product
                   </button>
