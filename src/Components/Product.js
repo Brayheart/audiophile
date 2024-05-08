@@ -50,7 +50,7 @@ const Product = ({ product, index }) => {
           </p>
           {console.log(product)}
           <Link to={`${slug}`} state={{ product }}>
-            <button className="bg-custom-orange text-white uppercase font-bold py-3 px-6 rounded-sm hover:bg-orange-500 transition-colors md:py-4 md:px-8 lg:px-6 lg:text-sm lg:py-3 mb-20">
+            <button className="bg-custom-orange text-white uppercase font-bold py-3 px-6 rounded-sm hover:bg-orange-400 transition-colors md:py-4 md:px-8 lg:px-6 lg:text-sm lg:py-3 mb-20">
               See Product
             </button>
           </Link>
