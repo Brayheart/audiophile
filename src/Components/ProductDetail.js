@@ -83,7 +83,7 @@ const ProductDetail = ({ addToCart }) => {
                   addToCart(name, quantity, price, slug);
                   setQuantity(0);
                 }}
-                className="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600 focus:outline-none"
+                className="bg-custom-orange text-white px-4 py-2 rounded hover:bg-orange-400 focus:outline-none"
               >
                 ADD TO CART
               </button>
@@ -208,7 +208,7 @@ const ProductDetail = ({ addToCart }) => {
                   to={`/${category}/${el.slug}`}
                   state={{ product: productDetails }}
                 >
-                  <button className="mx-auto block bg-orange-500 text-white uppercase font-bold py-3 px-6 rounded-sm hover:bg-orange-600 transition-colors md:py-4 md:px-8 lg:px-6 lg:text-sm lg:py-3 mb-10">
+                  <button className="mx-auto block bg-custom-orange text-white uppercase font-bold py-3 px-6 rounded-sm hover:bg-orange-400 transition-colors md:py-4 md:px-8 lg:px-6 lg:text-sm lg:py-3 mb-10">
                     See Product
                   </button>
                 </Link>

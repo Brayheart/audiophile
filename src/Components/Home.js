@@ -32,7 +32,7 @@ const Home = ({ productData }) => {
         {/* Product Info */}
         <div className="absolute top-[160px] flex justify-center w-full md:top-[180px] lg:top-[140px] xl:top-[200px] 2xl:top-[300px] lg:justify-start">
           <div className="text-white p-6 w-full px-10 md:px-44 lg:px-36 lg:pr-0 lg:text-left lg:w-6/12">
-            <div className="text-sm uppercase tracking-widest font-semibold mb-2 md:text-xl md:mb-8 lg:text-base">
+            <div className="text-sm uppercase tracking-widest font-semibold mb-2 md:text-xl md:mb-8 lg:text-base ">
               New Product
             </div>
             <h1 className="text-3xl font-bold leading-tight mb-4 md:text-5xl md:mb-8 lg:text-6xl 2xl:text-7xl">
@@ -46,7 +46,7 @@ const Home = ({ productData }) => {
               to="headphones/xx99-mark-two-headphones"
               state={{ product: Mark2 }}
             >
-              <button className="bg-orange-500 text-white uppercase font-bold py-3 px-6 rounded-sm hover:bg-orange-600 transition-colors md:py-4 md:px-8 lg:px-6 lg:text-sm lg:py-3">
+              <button className="bg-custom-orange text-white uppercase font-bold py-3 px-6 rounded-sm hover:bg-orange-400 transition-colors md:py-4 md:px-8 lg:px-6 lg:text-sm lg:py-3">
                 See Product
               </button>
             </Link>
@@ -57,7 +57,7 @@ const Home = ({ productData }) => {
       {/* Products */}
       <ProductCards />
 
-      <div className="bg-orange-400 rounded mx-5 mt-20 lg:mx-36 flex flex-col items-center text-center text-white lg:flex-row lg:justify-center lg:text-left lg:justify-evenly">
+      <div className="bg-custom-orange rounded mx-5 mt-20 lg:mx-36 flex flex-col items-center text-center text-white lg:flex-row lg:justify-center lg:text-left lg:justify-evenly">
         <div className="w-[150px] mt-10 lg:mt-0 lg:w-[250px] lg:mb-[-83px] lg:overflow-hidden">
           <img
             src={`${process.env.PUBLIC_URL}/assets/home/mobile/image-speaker-zx9.png`}
@@ -76,7 +76,7 @@ const Home = ({ productData }) => {
             truly remarkable sound.
           </p>
           <Link to="headphones/zx9-speaker" state={{ product: ZX9 }}>
-            <button className="bg-black text-white uppercase font-bold py-3 px-6 rounded-sm mb-16 hover:bg-orange-600 transition-colors md:py-4 md:px-8 lg:px-6 lg:py-3 lg:text-sm">
+            <button className="bg-black text-white uppercase font-bold py-3 px-6 rounded-sm mb-16 hover:bg-gray-500 transition-colors md:py-4 md:px-8 lg:px-6 lg:py-3 lg:text-sm">
               See Product
             </button>
           </Link>
@@ -102,7 +102,7 @@ const Home = ({ productData }) => {
         <div className="absolute top-1/3 ms-5 h-full flex flex-col md:ml-14">
           <p className="text-3xl font-bold mb-5">ZX7 SPEAKER</p>
           <Link to="headphones/zx7-speaker" state={{ product: ZX7 }}>
-            <button className="border border-black px-8 py-3">
+            <button className="border border-black px-8 py-3 hover:bg-black hover:text-white">
               SEE PRODUCT
             </button>
           </Link>

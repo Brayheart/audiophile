@@ -47,7 +47,7 @@ const Checkout = ({ cart, setCart }) => {
                     setDummyData(false);
                     fillForm();
                   }}
-                  className="text-white text-[12px] py-2 px-3 mb-5 rounded hover:bg-orange-600 cursor-pointer bg-orange-400"
+                  className="animate-shake animate-twice text-white text-[12px] py-2 px-3 mb-5 rounded hover:bg-orange-400 cursor-pointer bg-custom-orange"
                 >
                   Click me for dummy data!
                 </button>
@@ -307,7 +307,7 @@ const Checkout = ({ cart, setCart }) => {
                   disabled={!isFormValid()}
                   className={`${
                     isFormValid()
-                      ? "bg-orange-600 cursor-pointer"
+                      ? "bg-custom-orange hover:bg-orange-400 cursor-pointer"
                       : "bg-gray-300 hover:bg-gray-300 cursor-default"
                   } text-white w-full py-3 rounded`}
                 >
@@ -352,7 +352,7 @@ const Checkout = ({ cart, setCart }) => {
             <Link
               to="/"
               onClick={() => setCart([])}
-              className="bg-orange-500 text-white w-full py-3 rounded hover:bg-orange-600 text-center font-bold"
+              className="bg-custom-orange text-white w-full py-3 rounded hover:bg-orange-400 text-center font-bold"
             >
               BACK TO HOME
             </Link>

@@ -119,7 +119,7 @@ const Header = ({ cart, setCart }) => {
         {isMenuVisible && (
           <div
             onClick={() => setIsMenuVisible(false)}
-            className="fixed top-[80px] inset-x-0 bottom-0 bg-black bg-opacity-50 p-0 m-0"
+            className="fixed top-[80px] inset-x-0 bottom-0 bg-black bg-opacity-50 p-0 m-0 animate-fade-down animate-duration-500"
           >
             <div
               onClick={(e) => e.stopPropagation()}
@@ -209,7 +209,7 @@ const Header = ({ cart, setCart }) => {
         {isCartVisible && (
           <div
             onClick={() => setIsCartVisible(false)}
-            className="fixed top-[60px] inset-x-0 bottom-0 bg-black bg-opacity-50 p-0 m-0 md:flex md:justify-end  md:px-36"
+            className="animate-fade-down animate-duration-500 fixed top-[60px] inset-x-0 bottom-0 bg-black bg-opacity-50 p-0 m-0 md:flex md:justify-end  md:px-36"
           >
             <div
               onClick={(e) => e.stopPropagation()}
@@ -257,7 +257,7 @@ const Header = ({ cart, setCart }) => {
                 <Link to="/checkout">
                   <button
                     onClick={() => setIsCartVisible(false)}
-                    class="bg-orange-500 text-white w-full py-3 rounded hover:bg-orange-600"
+                    class="bg-custom-orange text-white w-full py-3 rounded hover:bg-orange-400"
                   >
                     CHECKOUT
                   </button>
