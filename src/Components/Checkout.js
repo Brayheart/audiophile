@@ -11,13 +11,13 @@ const Checkout = ({ cart, setCart }) => {
   return (
     <div>
       {
-        <div className="mt-[150px] w-full md:px-36">
+        <div className="mt-[150px] w-full px-5 md:px-36">
           <form className="flex flex-col lg:flex-row w-full">
             <div className="mb-6 w-full">
               <h2 className="text-2xl font-semibold mb-2">CHECKOUT</h2>
 
-              <div class="grid grid-cols-2 gap-6">
-                <div className="mb-4">
+              <div class="grid flex-col md:grid-cols-2 gap-6">
+                <div className="md:mb-4">
                   <label
                     className="block text-gray-700 text-sm font-bold mb-2"
                     htmlFor="name"
@@ -32,7 +32,7 @@ const Checkout = ({ cart, setCart }) => {
                   />
                 </div>
 
-                <div className="mb-4">
+                <div className="md:mb-4">
                   <label
                     className="block text-gray-700 text-sm font-bold mb-2"
                     htmlFor="email"
@@ -80,8 +80,8 @@ const Checkout = ({ cart, setCart }) => {
               </div>
 
               {/* ... other fields ... */}
-              <div class="grid grid-cols-2 gap-6">
-                <div className="mb-4">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="md:mb-4">
                   <label
                     className="block text-gray-700 text-sm font-bold mb-2"
                     htmlFor="zip"
@@ -98,7 +98,7 @@ const Checkout = ({ cart, setCart }) => {
 
                 {/* ... other fields ... */}
 
-                <div className="mb-6">
+                <div className="md:mb-6">
                   <label
                     className="block text-gray-700 text-sm font-bold mb-2"
                     htmlFor="city"
@@ -166,8 +166,8 @@ const Checkout = ({ cart, setCart }) => {
                   </label>
                 </div>
               </fieldset>
-              <div class="grid grid-cols-2 gap-6">
-                <div className="mb-4">
+              <div class="grid flex-col md:grid-cols-2 gap-6">
+                <div className="md:mb-4">
                   <label
                     className="block text-gray-700 text-sm font-bold mb-2"
                     htmlFor="e-money-number"
@@ -198,7 +198,7 @@ const Checkout = ({ cart, setCart }) => {
                 </div>
               </div>
             </div>
-            <div className="lg:w-3/12 ml-10 md:ml-0">
+            <div className="lg:w-3/12 ml-0 md:ml-10 md:ml-0">
               {cart.map((item) => {
                 console.log(item);
                 return (
@@ -235,7 +235,8 @@ const Checkout = ({ cart, setCart }) => {
                 <div className="font-bold">${calculateTotalPrice() + 50}</div>
               </div>
               <button
-                onClick={() => {
+                onClick={(e) => {
+                  e.stopPropagation();
                   setIsModal(true);
                 }}
                 className="bg-orange-500 text-white w-full py-3 rounded hover:bg-orange-600"
