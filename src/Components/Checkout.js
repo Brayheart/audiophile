@@ -307,9 +307,9 @@ const Checkout = ({ cart, setCart }) => {
                   disabled={!isFormValid()}
                   className={`${
                     isFormValid()
-                      ? "bg-orange-500"
+                      ? "bg-orange-600 cursor-pointer"
                       : "bg-gray-300 hover:bg-gray-300 cursor-default"
-                  } text-white w-full py-3 rounded hover:bg-orange-600 cursor-pointer`}
+                  } text-white w-full py-3 rounded`}
                 >
                   Continue and Pay
                 </button>
