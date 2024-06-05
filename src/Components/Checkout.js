@@ -198,7 +198,7 @@ const Checkout = ({ cart, setCart }) => {
                 </div>
               </div>
             </div>
-            <div className="lg:w-3/12 ml-10">
+            <div className="lg:w-3/12 ml-10 md:ml-0">
               {cart.map((item) => {
                 console.log(item);
                 return (

@@ -37,7 +37,7 @@ const ProductDetail = ({ addToCart }) => {
 
   return (
     <div className="container mx-auto px-5 py-16 md:px-0 md:py-2 mt-10 md:mt-32">
-      <div className="">
+      <div className="md:mx-5">
         <div className="flex flex-col md:w-full md:flex-row md:items-center">
           <picture>
             <source
@@ -54,7 +54,7 @@ const ProductDetail = ({ addToCart }) => {
               className="w-full h-auto mb-5 rounded-lg"
             />
           </picture>
-          <div className="flex-col md:w-full ">
+          <div className="flex-col md:w-full md:ms-5">
             <h1 className="text-3xl font-bold mb-4">{name}</h1>
             <p className="text-gray-600 mb-8">{description}</p>
             <p className="text-2xl font-bold mb-6">${price}</p>
@@ -112,7 +112,7 @@ const ProductDetail = ({ addToCart }) => {
         </div>
 
         <div className="md:flex md:mt-10">
-          <div className="md:flex md:flex-col lg:h-full md:mr-5 lg:mr-5 lg:w-[72.5%]">
+          <div className="md:flex md:flex-col lg:h-full md:mr-5 md:w-[71%] lg:mr-5 lg:w-[72.5%]">
             <picture className="">
               <source
                 media="(min-width: 1024px)"
