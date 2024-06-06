@@ -30,13 +30,13 @@ const Home = ({ productData }) => {
         </picture>
 
         {/* Product Info */}
-        <div className="absolute top-[160px] flex justify-center w-full md:top-[180px] lg:top-[140px] xl:top-[250px] lg:justify-start">
+        <div className="absolute top-[160px] flex justify-center w-full md:top-[180px] lg:top-[140px] xl:top-[200px] 2xl:top-[300px] lg:justify-start">
           <div className="text-white p-6 w-full px-10 md:px-44 lg:px-36 lg:pr-0 lg:text-left lg:w-6/12">
             <div className="text-sm uppercase tracking-widest font-semibold mb-2 md:text-xl md:mb-8 lg:text-base">
               New Product
             </div>
-            <h1 className="text-3xl font-bold leading-tight mb-4 md:text-5xl md:mb-8 lg:text-4xl">
-              XX99 Mark II Headphones
+            <h1 className="text-3xl font-bold leading-tight mb-4 md:text-5xl md:mb-8 lg:text-6xl 2xl:text-7xl">
+              <div>XX99 Mark II</div> <div>Headphones</div>
             </h1>
             <p className="text-base mb-6 md:text-lg md:mb-8 lg:text-xl">
               Experience natural, lifelike audio and exceptional build quality

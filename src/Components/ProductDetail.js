@@ -101,7 +101,8 @@ const ProductDetail = ({ addToCart }) => {
             <ul className="md:w-6/12 lg:w-full">
               {includes.map((item) => (
                 <li key={item.item} className="text-gray-600 mb-2">
-                  {item.quantity}x {item.item}
+                  <span className="text-orange-400">{item.quantity}x</span>{" "}
+                  {item.item}
                 </li>
               ))}
             </ul>

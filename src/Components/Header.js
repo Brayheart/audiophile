@@ -81,16 +81,25 @@ const Header = ({ cart, setCart }) => {
             audiophile
           </Link>
           <ul className="gap-5 hidden lg:flex">
-            <Link to="/" className="hover:text-orange-400">
+            <Link to="/" className="hover:text-orange-400 transition-colors">
               HOME
             </Link>
-            <Link to="/headphones" className="hover:text-orange-400">
+            <Link
+              to="/headphones"
+              className="hover:text-orange-400 transition-colors"
+            >
               HEADPHONES
             </Link>
-            <Link to="/speakers" className="hover:text-orange-400">
+            <Link
+              to="/speakers"
+              className="hover:text-orange-400 transition-colors"
+            >
               SPEAKERS
             </Link>
-            <Link to="/earphones" className="hover:text-orange-400">
+            <Link
+              to="/earphones"
+              className="hover:text-orange-400 transition-colors"
+            >
               EARPHONES
             </Link>
           </ul>
@@ -100,7 +109,7 @@ const Header = ({ cart, setCart }) => {
                 setIsCartVisible(!isCartVisible);
                 setIsMenuVisible(false);
               }}
-              className="h-6 w-6 hover:text-orange-400 hover:cursor-pointer"
+              className="h-6 w-6 hover:text-orange-400 hover:cursor-pointer transition-colors"
             />
             <span className="absolute bg-orange-500 rounded-full px-[6.4px] top-[-10px] right-[-5px] text-[12px]">
               {total ? total : ""}
